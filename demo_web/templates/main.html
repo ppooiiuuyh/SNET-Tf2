@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>Uploaded image</title>
+    </head>
+    <form method=post enctype=multipart/form-data>
+    <body>
+        <h1>Upload new File</h1>
+        <h2><a href="/static/test_samples.zip">Download Test Samples</a></h2>
+          <p><input type=file name=file>
+             <input type=submit value=Upload>
+        <table>
+          <tr>
+              <td>
+              <div class="slidecontainer">
+              <input type="range" min="10" max="250" value="{{scale}}" class="slider" id="scale_controller" name="scale_controller">
+              </div>
+
+              </td>
+          </tr>
+          <tr>
+            <th>Uploaded image</th>
+          </tr>
+          <tr>
+              <td><img src="/uploads/{{ filename }}" /></td>
+              <td><img src="/results/res_s1_{{ filename }}?{{ random_int }}" /></td>
+          </tr>
+          <tr>
+              <td><img src="/results/res_s1_{{ filename }}?{{ random_int }}" /></td>
+          </tr>
+          <th>Result image</th>
+          </tr>
+        </table>
+    </body>
+    </form>
+</html>
