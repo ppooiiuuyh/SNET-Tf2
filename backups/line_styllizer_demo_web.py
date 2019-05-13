@@ -1,9 +1,8 @@
 import sys
 
 sys.path.append('./demo_web')
-from models.model_inference import  Model_Tester as Line_Stylier_Model_Tester
+from backups.model_inference import  Model_Tester as Line_Stylier_Model_Tester
 from pretrained_line_normalizer.line_normalizer_model_inference import Model_Tester as Line_Normalizer_Model_Tester
-import numpy as np
 from data_utils import *
 from flask import Flask, request, send_from_directory, render_template, make_response
 import cv2, argparse

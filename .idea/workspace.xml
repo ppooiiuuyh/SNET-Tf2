@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="33274b2e-ce63-4561-a7aa-d6836d09195c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/test/Set5/baby_GT.bmp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/test/Set5/bird_GT.bmp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/100007.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/100039.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/100075.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/100080.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/100098.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/100099.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/10081.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/101027.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/101084.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/102062.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/103006.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/103029.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/103041.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/103078.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/104010.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/104022.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/104055.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/105019.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/105027.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/105053.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/106005.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/106020.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/106025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/106047.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/107014.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/107045.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/107072.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/108004.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/108036.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/108041.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/108069.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/108073.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/109034.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/109055.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/112056.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/112082.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/112090.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/113009.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/113016.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/113044.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/117025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/117054.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/118015.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/118020.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/118031.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/118035.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/118072.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/120003.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/12003.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/120093.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/12074.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/122048.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/123057.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/124084.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/126039.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/128035.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/130014.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/130034.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/130066.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/134008.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/134049.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/134052.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/134067.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/135037.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/135069.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/138032.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/138078.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/140006.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/140055.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/140075.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/140088.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/14085.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/14092.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/141012.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/141048.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/144067.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/145014.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/145053.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/145059.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/145079.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/146074.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/147021.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/147062.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/147077.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/147080.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/15004.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/15011.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/15062.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/15088.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/151087.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/153077.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/153093.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/155060.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/156054.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/156079.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/157032.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/157036.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/157087.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/159002.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/159022.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/159029.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/159045.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/159091.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/160006.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/16004.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/160067.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/16052.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/16068.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/161045.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/161062.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/163004.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/163014.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/163062.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/163096.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/164046.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/164074.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/166081.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/168084.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/169012.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/170054.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/17067.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/172032.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/173036.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/175083.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/176019.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/176035.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/176039.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/176051.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/178054.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/179084.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/181018.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/181021.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/181079.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/181091.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/183055.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/183066.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/183087.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/185092.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/187003.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/187029.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/187039.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/187058.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/187071.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/187083.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/187099.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/188005.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/188025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/188063.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/188091.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/189003.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/189006.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/189011.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/189013.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/189029.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/189096.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/196015.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/196027.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/196040.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/196062.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/196088.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/198004.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/198023.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/198054.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/198087.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/20008.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/20069.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/201080.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/2018.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/202000.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/202012.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/206062.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/206097.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/207038.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/207049.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/207056.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/208078.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/209021.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/209070.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/2092.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/216041.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/216053.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/216066.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/217013.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/217090.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/220003.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/22013.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/22090.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/22093.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/223004.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/223060.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/225017.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/225022.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/226022.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/226033.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/226043.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/226060.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/227040.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/227046.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/228076.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/230063.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/230098.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/23025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/23050.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/23080.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/23084.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/231015.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/232038.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/232076.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/235098.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/236017.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/238011.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/238025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/239007.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/239096.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/24004.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/24063.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/242078.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/243095.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/245051.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/246009.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/246016.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/246053.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/247003.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/247012.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/247085.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/249021.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/249061.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/249087.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/250047.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/250087.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/25098.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/253016.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/253036.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/253092.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/254033.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/254054.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/257098.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/258089.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/259060.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/260081.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/26031.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/267036.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/268002.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/268048.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/268074.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/27059.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/271008.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/271031.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/274007.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/277053.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/277095.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/279005.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/28075.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/28083.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/28096.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/281017.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/285022.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/285036.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/286092.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/288024.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/289011.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/290035.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/29030.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/292066.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/293029.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/296028.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/296058.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/299091.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/301007.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/302003.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/302022.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/306051.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/306052.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/3063.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/309004.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/309040.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/310007.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/311068.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/311081.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/314016.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/317043.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/317080.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/323016.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/326025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/326038.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/326085.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/33044.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/33066.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/334025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/335088.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/335094.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/344010.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/346016.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/347031.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/35008.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/35010.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/35028.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/35049.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/35058.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/35070.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/35091.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/353013.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/36046.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/361084.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/365025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/365072.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/365073.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/368016.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/368037.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/368078.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/370036.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/372019.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/372047.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/374020.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/374067.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/376001.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/376020.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/376086.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/384022.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/384089.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/385022.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/385028.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/388006.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/388016.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/388018.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/388067.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/393035.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/41004.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/41006.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/41025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/41029.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/41085.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/41096.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/42044.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/42078.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/43033.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/43051.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/43070.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/43083.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/45000.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/45077.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/46076.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/48017.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/48025.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/48055.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/49024.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/5096.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/51084.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/54005.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/55067.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/55075.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/56028.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/59078.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/60079.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/6046.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/61034.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/61060.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/61086.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/64061.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/65010.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/65019.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/65074.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/65084.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/65132.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/66039.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/66075.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/67079.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/68077.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/69000.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/69007.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/69022.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/70011.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/70090.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/71046.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/71076.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/71099.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/76002.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/77062.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/78019.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/78098.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/79073.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/80085.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/80090.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/80099.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/8049.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/8068.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/81066.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/81090.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/81095.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/8143.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/87015.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/87065.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/90076.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/92014.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/92059.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/94079.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/94095.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/95006.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/97010.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dataset/train/BSD400/97017.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backups/test_.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/model_SNET.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/model_SNET_modular.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/ops.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/data/monarch.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/data/monarch_ARCNN.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/data/monarch_S-Net.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/data/monarch_jpeg_q10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/discriminator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/generator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/model_train_augcyclegan.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/model_train_cyclegan.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/models/model_train_pix2pix.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/README.md" afterPath="$PROJECT_DIR$/backups/SNet-pytorch-master/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/dataset.py" afterPath="$PROJECT_DIR$/backups/SNet-pytorch-master/dataset.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/example.py" afterPath="$PROJECT_DIR$/backups/SNet-pytorch-master/example.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/main.py" afterPath="$PROJECT_DIR$/backups/SNet-pytorch-master/main.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/model.py" afterPath="$PROJECT_DIR$/backups/SNet-pytorch-master/model.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SNet-pytorch-master/utils.py" afterPath="$PROJECT_DIR$/backups/SNet-pytorch-master/utils.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/results/res_s1_0000_concat_2.png" afterPath="$PROJECT_DIR$/backups/demo_web/results/res_s1_0000_concat_2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/14310.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/14310.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/24944.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/24944.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/4357.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/4357.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/46096.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/46096.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/50759.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/50759.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/5525.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/5525.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/67985.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/67985.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/70712.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/70712.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/71077.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/71077.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/76051.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/76051.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/78714.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/78714.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/83963.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/83963.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/85348.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/85348.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/86532.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/86532.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/93903.png" afterPath="$PROJECT_DIR$/backups/demo_web/static/93903.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/static/test_samples.zip" afterPath="$PROJECT_DIR$/backups/demo_web/static/test_samples.zip" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/templates/init.html" afterPath="$PROJECT_DIR$/backups/demo_web/templates/init.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/templates/main.html" afterPath="$PROJECT_DIR$/backups/demo_web/templates/main.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/uploads/0000_concat_2.png" afterPath="$PROJECT_DIR$/backups/demo_web/uploads/0000_concat_2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/uploads/0012_concat_50.png" afterPath="$PROJECT_DIR$/backups/demo_web/uploads/0012_concat_50.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/uploads/0014_concat_56.png" afterPath="$PROJECT_DIR$/backups/demo_web/uploads/0014_concat_56.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/uploads/0015_concat_62.png" afterPath="$PROJECT_DIR$/backups/demo_web/uploads/0015_concat_62.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/demo_web/uploads/0018_concat_74.png" afterPath="$PROJECT_DIR$/backups/demo_web/uploads/0018_concat_74.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/line_styllizer_demo_web.py" afterPath="$PROJECT_DIR$/backups/line_styllizer_demo_web.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/models/model_inference.py" afterPath="$PROJECT_DIR$/backups/model_inference.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ops.py" afterPath="$PROJECT_DIR$/backups/ops.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SNET-Tf2.iml" afterPath="$PROJECT_DIR$/.idea/SNET-Tf2.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_utils.py" afterPath="$PROJECT_DIR$/data_utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trainer.py" afterPath="$PROJECT_DIR$/trainer.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.85311097">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="model_SNET.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/models/model_SNET.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="232">
+                  <caret line="96" column="116" lean-forward="false" selection-start-line="96" selection-start-column="116" selection-end-line="96" selection-end-column="116" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="line_styllizer_demo_web.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backups/line_styllizer_demo_web.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="def_function.py" pinned="false" current-in-tab="false">
+            <entry file="file://$USER_HOME$/anaconda3/envs/tensorflow2/lib/python3.6/site-packages/tensorflow/python/eager/def_function.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="6902">
+                  <caret line="425" column="0" lean-forward="false" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test_.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/backups/test_.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="data_utils.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/data_utils.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="164">
+                  <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="trainer.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/trainer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ops.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/models/ops.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+                  <folding>
+                    <element signature="e#0#23#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="model_SNET_modular.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/models/model_SNET_modular.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="186">
+                  <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ops.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backups/ops.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="290">
+                  <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#0#23#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/model.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="782">
+                  <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dataset.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/dataset.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="680">
+                  <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/main.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-714">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>add</find>
+      <find>generators</find>
+      <find>concate</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/models/model_blocks.py" />
+        <option value="$PROJECT_DIR$/SNet-pytorch-master/model.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/models/model_SNET_modular.py" />
+        <option value="$PROJECT_DIR$/models/ops.py" />
+        <option value="$PROJECT_DIR$/trainer.py" />
+        <option value="$PROJECT_DIR$/data_utils.py" />
+        <option value="$PROJECT_DIR$/models/model_SNET.py" />
+        <option value="$PROJECT_DIR$/backups/test.py" />
+        <option value="$PROJECT_DIR$/backups/test_.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="56" />
+    <option name="y" value="-14" />
+    <option name="width" value="1865" />
+    <option name="height" value="1095" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; Python 3.6.8 (~/anaconda3/envs/tensorflow2/bin/python3) &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Set5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SNET-Tf2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backups" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$/dataset/test" />
+      <recent name="$PROJECT_DIR$/dataset/train" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backups" />
+      <recent name="$PROJECT_DIR$/dataset/train" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="false" name="data_utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SNET-Tf2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ops" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SNET-Tf2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/ops.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in test_.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SNET-Tf2" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/backups/test_.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="model_SNET" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SNET-Tf2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/model_SNET.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="trainer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SNET-Tf2" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trainer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SNET-Tf2" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SNET-Tf2" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SNET-Tf2" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SNET-Tf2" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.data_utils" />
+      <item index="1" class="java.lang.String" itemvalue="Python.ops" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_.py" />
+      <item index="3" class="java.lang.String" itemvalue="Python.model_SNET" />
+      <item index="4" class="java.lang.String" itemvalue="Python.trainer" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python.trainer" />
+        <item index="2" class="java.lang.String" itemvalue="Python.data_utils" />
+        <item index="3" class="java.lang.String" itemvalue="Python.model_SNET" />
+        <item index="4" class="java.lang.String" itemvalue="Python.ops" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33274b2e-ce63-4561-a7aa-d6836d09195c" name="Default" comment="" />
+      <created>1557493456509</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557493456509</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 18h 36m 20s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 18h 36m 32s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 18h 36m 37s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 18h 36m 50s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 18h 36m 56s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 23h 01m 18s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 23h 03m 47s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 23h 03m 56s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 23h 04m 06s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test__py - 2019.05.12 at 23h 04m 07s.xml">
+      <configuration name="Unittests in test_.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="56" y="-14" width="1865" height="1095" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14387698" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/models/model_SNET.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/tensorflow2/lib/python3.6/site-packages/tensorflow/python/eager/def_function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6902">
+          <caret line="425" column="0" lean-forward="false" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/test_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="87" column="39" lean-forward="false" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="44" column="28" lean-forward="false" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="49" lean-forward="false" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model_SNET.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4352">
+          <caret line="268" column="60" lean-forward="false" selection-start-line="268" selection-start-column="60" selection-end-line="268" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset/train/monarch.bmp" />
+    <entry file="file://$PROJECT_DIR$/dataset/train/monarch_ARCNN.png" />
+    <entry file="file://$PROJECT_DIR$/dataset/train/monarch_jpeg_q10.png" />
+    <entry file="file://$PROJECT_DIR$/dataset/train/monarch_S-Net.png" />
+    <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model_train_pix2pix.py" />
+    <entry file="file://$PROJECT_DIR$/models/model_train_cyclegan.py" />
+    <entry file="file://$PROJECT_DIR$/models/model_train_augcyclegan.py" />
+    <entry file="file://$USER_HOME$/anaconda3/envs/tensorflow2/lib/python3.6/site-packages/tensorflow/python/eager/def_function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6902">
+          <caret line="425" column="0" lean-forward="false" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/generator.py" />
+    <entry file="file://$PROJECT_DIR$/models/discriminator.py" />
+    <entry file="file://$PROJECT_DIR$/backups/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="56" column="37" lean-forward="false" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/SNet-pytorch-master/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/line_styllizer_demo_web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model_SNET_modular.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model_SNET.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="96" column="116" lean-forward="false" selection-start-line="96" selection-start-column="116" selection-end-line="96" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backups/test_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
