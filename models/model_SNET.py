@@ -24,7 +24,7 @@ class Model_Train():
             self.generator = S_Net_intermediated_awared(num_metrics=self.config.num_metrics, structure_type='advanced')
 
 
-        self.generator_optimizer = tf.keras.optimizers.Adam(1e-4)
+        self.generator_optimizer = tf.keras.optimizers.Adam(self.config.learning_rate)
 
         """ saver """
         self.step = tf.Variable(0,dtype=tf.int64)
@@ -112,7 +112,6 @@ class Model_Train():
         """ return log str """
         log = "\n"
         for i in range(self.config.num_metrics):
-            print(losses, losses[i])
             log += "[output{}] loss = {}, psnr = {}\n".format(i,np.mean(losses[i]),np.mean(PSNRs[i]))
         return log
 

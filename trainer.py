@@ -22,6 +22,7 @@ parser.add_argument("--batch_size", type=int, default=16, help='Minibatch size(g
 parser.add_argument("--patch_size", type=int, default=48, help='Minibatch size(global)')
 parser.add_argument("--jpeg_quality", type=int, default=20, help='Minibatch size(global)')
 parser.add_argument("--num_metrics", type=int, default=3, help='the number of metrics')
+parser.add_argument("--learning_rate", type=float, default=0.0001, help="lr")
 parser.add_argument("--data_root_train", type=str, default='./dataset/train/BSD400', help='Data root dir')
 parser.add_argument("--data_root_test", type=str, default='./dataset/test/Set5', help='Data root dir')
 parser.add_argument("--channels", type=int, default=3, help='Channel size')
