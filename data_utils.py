@@ -12,6 +12,7 @@ from tqdm import tqdm
 import argparse
 import matplotlib.pyplot as plt
 import copy
+from functools import partial
 
 
 
@@ -53,16 +54,17 @@ class Tensor_Dataset_Wraper():
 
 def make_iterator_ontime(config):
     """ mapping functions """
-    def mapping_function_for_paired_iterator(inputs):
+    def mapping_function_for_paired_iterator(inputs, crop = True):
         file_names = [file_name.decode("utf-8") for file_name in inputs.numpy()]
         inputs = []
         labels = []
         for file_name in file_names :
             label = PIL.Image.open(file_name).convert('RGB')
-            # randomly crop patch from training set
-            crop_x = random.randint(0, label.width - config.patch_size)
-            crop_y = random.randint(0, label.height - config.patch_size)
-            label = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
+            if crop :
+                # randomly crop patch from training set
+                crop_x = random.randint(0, label.width - config.patch_size)
+                crop_y = random.randint(0, label.height - config.patch_size)
+                label = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
 
             # additive jpeg noise
             buffer = io.BytesIO()
@@ -78,6 +80,8 @@ def make_iterator_ontime(config):
         return inputs, labels
 
 
+
+
     """ prepare train iterator """
     # prepare paired iterator
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_train,"*.*")))
@@ -89,7 +93,7 @@ def make_iterator_ontime(config):
     """ prepare test dataset """
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_test,"*.*")))
     paired_file_names = paired_file_names.batch(1,drop_remainder=True).shuffle(config.buffer_size)
-    paired_iterator = Tensor_Dataset_Wraper(paired_file_names, map_func= mapping_function_for_paired_iterator)
+    paired_iterator = Tensor_Dataset_Wraper(paired_file_names, map_func= partial(mapping_function_for_paired_iterator,crop=False))
     test_iterator = paired_iterator
 
     """
