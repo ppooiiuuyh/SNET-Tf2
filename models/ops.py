@@ -15,35 +15,35 @@ def L1loss(input,target):
  model blocks
 ================================================================= """
 initializer = tf.initializers.VarianceScaling()
-def EncoderBlock(x):
+def EncoderBlock(x, activation = tf.keras.layers.LeakyReLU(alpha=0.2)):
     x = tf.keras.layers.Conv2D(256, 5, strides=1, padding='same', kernel_initializer=initializer, use_bias=True)(x)
-    x = tf.keras.layers.ReLU()(x)
+    x = activation(x)
     x = tf.keras.layers.Conv2D(256, 5, strides=1, padding='same', kernel_initializer=initializer, use_bias=True)(x)
-    x = tf.keras.layers.ReLU()(x)
+    x = activation(x)
     return x
 
-def DecoderBlock(x):
+def DecoderBlock(x, activation = tf.keras.layers.LeakyReLU(alpha=0.2)):
     x = tf.keras.layers.Conv2D(256, 5, strides=1, padding='same', kernel_initializer=initializer, use_bias=True)(x)
-    x = tf.keras.layers.ReLU()(x)
+    x = activation(x)
     x = tf.keras.layers.Conv2D(3, 5, strides=1, padding='same', kernel_initializer=initializer, use_bias=True)(x)
-    x = tf.keras.layers.ReLU()(x)
+    x = activation(x)
     return x
 
 
 
 
 
-def ConvolutionalUnit(x, structure_type = 'classic'):
+def ConvolutionalUnit(x, structure_type = 'classic', activation = tf.keras.layers.LeakyReLU(alpha=0.2)):
     residual = x
 
     if structure_type == "classic":
         x = tf.keras.layers.Conv2D(256, 5, strides=1, padding='same', kernel_initializer=initializer, use_bias=True)(x)
-        x = tf.keras.layers.ReLU()(x)
+        x = activation(x)
         x = tf.keras.layers.Add()([x, residual])
 
     elif structure_type == "advanced":
         x = tf.keras.layers.Conv2D(256, 5, strides=1, padding='same', kernel_initializer=initializer, use_bias=True)(x)
-        x = tf.keras.layers.ReLU()(x)
+        x = activation(x)
         x = tf.keras.layers.Conv2D(256, 5, strides=1, padding='same', kernel_initializer=initializer, use_bias=True)(x)
         x = tf.keras.layers.Lambda(lambda x: x * 0.1)(x)
         x = tf.keras.layers.Add()([x, residual])
