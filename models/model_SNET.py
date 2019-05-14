@@ -97,10 +97,17 @@ class Model_Train():
             print("inference")
             for e, B_from_A in enumerate(B_from_As):
                 losses[e].append(L1loss(label_image_test, B_from_A).numpy())
+                print("cal loss")
+
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
+                print("concat")
+
                 #label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
                 #label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
+
                 PSNRs[e].append(tf.image.psnr(label_image_test,B_from_A,1).numpy())
+                print("psnr")
+        print("test")
 
 
         """ log summary """
