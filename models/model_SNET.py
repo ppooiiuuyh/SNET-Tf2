@@ -94,19 +94,12 @@ class Model_Train():
 
         for input_image_test,label_image_test in test_dataset:
             B_from_As = self.inference(input_image_test)
-            print("inference")
             for e, B_from_A in enumerate(B_from_As):
-                #losses[e].append(L1loss(label_image_test, B_from_A).numpy())
-                print("cal loss")
+                losses[e].append(L1loss(label_image_test, B_from_A).numpy())
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
-                print("concat")
-
                 #label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
                 #label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
-
                 PSNRs[e].append(tf.image.psnr(label_image_test,B_from_A,1).numpy())
-                print("psnr")
-            print("logging")
 
 
         """ log summary """
@@ -115,15 +108,15 @@ class Model_Train():
                 for e, output in enumerate(outputs):
                     tf.summary.image("{}_B_from_A_{}_0".format(summary_name,e), denormalize(output[0]), step=self.step)
                     tf.summary.image("{}_B_from_A_{}_1".format(summary_name,e), denormalize(output[1]), step=self.step)
-                #for e, loss in enumerate(losses):
-                #    tf.summary.scalar("{}_loss_{}".format(summary_name, e),np.mean(loss), step=self.step)
+                for e, loss in enumerate(losses):
+                    tf.summary.scalar("{}_loss_{}".format(summary_name, e),np.mean(loss), step=self.step)
                 for e, PSNR in enumerate(PSNRs):
                     tf.summary.scalar("{}_psnr_{}".format(summary_name, e),np.mean(PSNR), step=self.step)
 
         """ return log str """
         log = "\n"
         for i in range(self.config.num_metrics):
-            log += "[output{}] loss = , psnr = {}\n".format(i,np.mean(PSNRs[i]))
+            log += "[output{}] loss = {}, psnr = {}\n".format(i,np.mean(losses[i]),np.mean(PSNRs[i]))
         return log
 
 
