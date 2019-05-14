@@ -85,7 +85,7 @@ class Model_Train():
     # Typically, the test dataset is not large
     @tf.function
     def inference(self, input_image):
-        return self.genetator(input_image)
+        return self.generator(input_image)
 
     def test_step(self, test_dataset, summary_name = "test"):
         outputs = [[] for _ in range(self.config.num_metrics)]
