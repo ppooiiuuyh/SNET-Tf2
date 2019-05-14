@@ -93,7 +93,7 @@ def make_iterator_ontime(config):
     """ prepare test dataset """
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_test,"*.*")))
     paired_file_names = paired_file_names.batch(1,drop_remainder=True).shuffle(config.buffer_size)
-    paired_iterator = Tensor_Dataset_Wraper(paired_file_names, map_func= partial(mapping_function_for_paired_iterator,crop=True))
+    paired_iterator = Tensor_Dataset_Wraper(paired_file_names, map_func= partial(mapping_function_for_paired_iterator,crop=False))
     test_iterator = paired_iterator
 
     """

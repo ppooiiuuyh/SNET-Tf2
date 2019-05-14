@@ -83,13 +83,17 @@ class Model_Train():
 
 
     # Typically, the test dataset is not large
+    @tf.function
+    def inference(self, input_image):
+        return self.genetator(input_image)
+
     def test_step(self, test_dataset, summary_name = "test"):
         outputs = [[] for _ in range(self.config.num_metrics)]
         losses = [[] for _ in range(self.config.num_metrics)]
         PSNRs = [[] for _ in range(self.config.num_metrics)]
 
         for input_image_test,label_image_test in test_dataset:
-            B_from_As = self.generator(input_image_test)
+            B_from_As = self.inference(input_image_test)
             for e, B_from_A in enumerate(B_from_As):
                 losses[e].append(L1loss(label_image_test, B_from_A).numpy())
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
