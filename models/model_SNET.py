@@ -56,7 +56,7 @@ class Model_Train():
         return_dicts = {"inputs_concat" :inputs_concat}
         return_dicts.update({'gen_loss{}'.format(e) : l  for e,l in enumerate(gen_losses)})
         return_dicts.update({'gen_loss' : gen_loss})
-        return_dicts.update({'B_from_A{}'.format(e) : l  for e,l in enumerate(B_from_As)})
+        return_dicts.update({'B_from_A{}'.format(e) : tf.concat([paired_input,l,paired_target],axis=2)  for e,l in enumerate(B_from_As)})
         return return_dicts
 
 
