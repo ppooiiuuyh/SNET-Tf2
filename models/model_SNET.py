@@ -98,7 +98,6 @@ class Model_Train():
             for e, B_from_A in enumerate(B_from_As):
                 losses[e].append(L1loss(label_image_test, B_from_A).numpy())
                 print("cal loss")
-
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
                 print("concat")
 
@@ -107,7 +106,7 @@ class Model_Train():
 
                 PSNRs[e].append(tf.image.psnr(label_image_test,B_from_A,1).numpy())
                 print("psnr")
-        print("test")
+            print("logging")
 
 
         """ log summary """
