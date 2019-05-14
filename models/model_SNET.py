@@ -50,6 +50,7 @@ class Model_Train():
         """ optimize """
         G_vars = self.generator.trainable_variables
         generator_gradients = gen_tape.gradient(gen_loss, G_vars)
+        tf.print(generator_gradients)
         self.generator_optimizer.apply_gradients(zip(generator_gradients, G_vars))
 
         inputs_concat = tf.concat([paired_input, paired_target], axis=2)
