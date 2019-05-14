@@ -94,6 +94,7 @@ class Model_Train():
 
         for input_image_test,label_image_test in test_dataset:
             B_from_As = self.inference(input_image_test)
+            print("inference")
             for e, B_from_A in enumerate(B_from_As):
                 losses[e].append(L1loss(label_image_test, B_from_A).numpy())
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
