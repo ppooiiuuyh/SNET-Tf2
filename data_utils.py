@@ -105,14 +105,14 @@ def make_iterator_ontime(config):
         return inputs, labels
 
     def load_image(image_path, channels = 3):
-        tf.io.decode_image(image_path, channels=channels, dtype=tf.dtypes.uint8)
+        image = tf.io.decode_image(image_path, channels=channels, dtype=tf.dtypes.uint8)
+        return image
 
     """ prepare train iterator """
     # prepare paired iterator
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_train,"*.*")))
-    paired_dataset = paired_file_names.map(map_func=load_image)
-    paired_dataset = paired_dataset.batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat().prefetch(buffer_size=100)
-    paired_iterator = Tensor_Iterator_Wraper(paired_file_names.__iter__(), map_func= mapping_function_for_paired_iterator2)
+    paired_dataset = paired_file_names.map(map_func=load_image).batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat().prefetch(buffer_size=100)
+    paired_iterator = Tensor_Iterator_Wraper(paired_dataset.__iter__(), map_func= mapping_function_for_paired_iterator2)
     train_iterator = paired_iterator
 
 
