@@ -102,27 +102,24 @@ class Model_Train():
         return result
     """
     @tf.function
-    def inference(self, model, input_image):
-        result = model(input_image)
-        return result
-
-
-    def test_step(self, test_dataset, summary_name = "test"):
+    def testing(self, test_dataset):
         outputs = [[] for _ in range(self.config.num_metrics)]
         losses = [[] for _ in range(self.config.num_metrics)]
         PSNRs = [[] for _ in range(self.config.num_metrics)]
 
-        for input_image_test,label_image_test in test_dataset:
-            B_from_As = [self.inference(g,input_image_test) for g in self.generators]
-            print("inference")
+        for input_image_test, label_image_test in test_dataset:
+            B_from_As = [g(input_image_test) for g in self.generators]
+            tf.print("inference")
             for e, B_from_A in enumerate(B_from_As):
                 losses[e].append(L1loss(label_image_test, B_from_A).numpy())
-                outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
-                #label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
-                #label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
-                PSNRs[e].append(tf.image.psnr(label_image_test,B_from_A,1).numpy())
+                outputs[e].append(tf.concat([input_image_test, B_from_A.numpy(), label_image_test], axis=2))
+                # label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
+                # label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
+                PSNRs[e].append(tf.image.psnr(label_image_test, B_from_A, 1).numpy())
+        return outputs,losses,PSNRs
 
-
+    def test_step(self, test_dataset, summary_name = "test"):
+        outputs, losses, PSNRs = self.testing(test_dataset)
         """ log summary """
         if summary_name and self.step.numpy() %100 == 0:
             with self.train_summary_writer.as_default():
