@@ -111,7 +111,7 @@ class Model_Train():
             B_from_As = [g(input_image_test) for g in self.generators]
             tf.print("inference")
             for e, B_from_A in enumerate(B_from_As):
-                losses[e].append(L1loss(label_image_test, B_from_A).numpy())
+                losses[e].append(L1loss(label_image_test, B_from_A))
                 outputs[e].append(tf.concat([input_image_test, B_from_A.numpy(), label_image_test], axis=2))
                 # label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
                 # label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
