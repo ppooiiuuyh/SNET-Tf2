@@ -3,7 +3,7 @@ import time
 
 from backups.ops import *
 from data_utils import *
-from models.model_SNET import Model_Train
+from models.model_SNET_ import Model_Train
 
 #tf.config.gpu.set_per_process_memory_fraction(0.6)
 tf.config.gpu.set_per_process_memory_growth(True)
