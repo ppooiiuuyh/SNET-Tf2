@@ -93,7 +93,7 @@ def make_iterator_offtime(config):
 
     """ prepare test dataset """
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_test, "*.*")))
-    paired_input_patches, paired_label_patches = make_image_patches(paired_file_names,crop = False)
+    paired_input_patches, paired_label_patches = make_image_patches(paired_file_names,is_train = False)
     paired_test_dataset = zip(paired_input_patches, paired_label_patches)
 
     return paired_train_iterator, paired_test_dataset
