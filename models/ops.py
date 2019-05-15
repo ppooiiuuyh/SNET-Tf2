@@ -82,9 +82,10 @@ def S_Net_progressiveskip(channels = 3, num_metrics=3 , structure_type='classic'
 
     decoders = []
     for e,cu in enumerate(convolution_units):
-     decoders.append(tf.keras.layers.Add()([DecoderBlock(cu), inputs if e == 0 else decoders[-1]]))
+        decoders.append(tf.keras.layers.Add()([DecoderBlock(cu), inputs if e == 0 else decoders[-1]]))
 
-    return tf.keras.Model(inputs=[inputs], outputs=decoders)
+    models = [tf.keras.Model(inputs=[inputs], outputs=[dec]) for dec in decoders]
+    return models
 
 
 

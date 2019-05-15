@@ -19,7 +19,7 @@ class Model_Train():
         elif self.config.exp_type == 1:
             self.generators = S_Net_contskip(num_metrics=self.config.num_metrics, structure_type='advanced')
         elif self.config.exp_type == 2:
-            self.generator = S_Net_progressiveskip(num_metrics=self.config.num_metrics, structure_type='advanced')
+            self.generators = S_Net_progressiveskip(num_metrics=self.config.num_metrics, structure_type='advanced')
         elif self.config.exp_type == 3:
             self.generator = S_Net_intermediated_awared(num_metrics=self.config.num_metrics, structure_type='advanced')
 
@@ -27,7 +27,7 @@ class Model_Train():
         self.generator_optimizer = tf.keras.optimizers.Adam(self.config.learning_rate)
 
         """ saver """
-        self.step = tf.Variable(1,dtype=tf.int64)
+        self.step = tf.Variable(0,dtype=tf.int64)
         self.ckpt = tf.train.Checkpoint(step=self.step,
                                         generator_optimizer=self.generator_optimizer,
                                         generator0=self.generators[0],
@@ -44,44 +44,30 @@ class Model_Train():
 
 
 
-
-    # Typically, the test dataset is not large
     @tf.function
-    def inference(self, input_image):
-        return self.generator(input_image)
+    def training(self, inputs):
+        paired_input, paired_target = inputs
+        with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
+            B_from_As = [g(paired_input) for g in self.generators]
 
-    def test_step(self, test_dataset, summary_name = "test"):
-        outputs = [[] for _ in range(self.config.num_metrics)]
-        losses = [[] for _ in range(self.config.num_metrics)]
-        PSNRs = [[] for _ in range(self.config.num_metrics)]
+            """ loss for generator """
+            gen_losses = [L1loss(paired_target, B_from_A) for B_from_A in B_from_As]
+            gen_loss = tf.reduce_mean(gen_losses)
 
-        for input_image_test,label_image_test in test_dataset:
-            B_from_As = self.inference(input_image_test)
-            for e, B_from_A in enumerate(B_from_As):
-                losses[e].append(L1loss(label_image_test, B_from_A).numpy())
-                outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
-                #label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
-                #label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
-                PSNRs[e].append(tf.image.psnr(label_image_test,B_from_A,1).numpy())
+        """ optimize """
+        G_vars = []
+        for g in self.generators:
+            G_vars += g.trainable_variables
+        G_vars = list(set(G_vars))
+        generator_gradients = gen_tape.gradient(gen_loss, G_vars)
+        self.generator_optimizer.apply_gradients(zip(generator_gradients, G_vars))
 
-
-        """ log summary """
-        if summary_name and self.step.numpy() %1000 == 0:
-            with self.train_summary_writer.as_default():
-                for e, output in enumerate(outputs):
-                    tf.summary.image("{}_B_from_A_{}_0".format(summary_name,e), denormalize(output[0]), step=self.step)
-                    tf.summary.image("{}_B_from_A_{}_1".format(summary_name,e), denormalize(output[1]), step=self.step)
-                for e, loss in enumerate(losses):
-                    tf.summary.scalar("{}_loss_{}".format(summary_name, e),np.mean(loss), step=self.step)
-                for e, PSNR in enumerate(PSNRs):
-                    tf.summary.scalar("{}_psnr_{}".format(summary_name, e),np.mean(PSNR), step=self.step)
-
-        """ return log str """
-        log = "\n"
-        for i in range(self.config.num_metrics):
-            log += "[output{}] loss = {}, psnr = {}\n".format(i,np.mean(losses[i]),np.mean(PSNRs[i]))
-        return log
-
+        inputs_concat = tf.concat([paired_input, paired_target], axis=2)
+        return_dicts = {"inputs_concat" :inputs_concat}
+        return_dicts.update({'gen_loss{}'.format(e) : l  for e,l in enumerate(gen_losses)})
+        return_dicts.update({'gen_loss' : gen_loss})
+        return_dicts.update({'B_from_A{}'.format(e) : tf.concat([paired_input,l,paired_target],axis=2)  for e,l in enumerate(B_from_As)})
+        return return_dicts
 
 
 
@@ -104,33 +90,10 @@ class Model_Train():
         return "g_loss : {}".format(result_logs_dict["gen_loss"])
 
 
-
-
-    # Typically, the test dataset is not large
-    """
-    @tf.function
-    def inference(self, model, input_image):
-        # result = [g(input_image) for g in self.generators]
-        for g in self.generators:
-            result = g(input_image)
-        return result
-    """
     # Typically, the test dataset is not large
     @tf.function
-    def testing(self, input_image, label_image):
-
-        B_from_As = [g(input_image) for g in self.generators]
-        for i in range(8):
-            tf.print(B_from_As[i][0,0,0,0])
-
-        losses = [L1loss(label_image, B_from_As) for B_from_A in B_from_As]
-        for i in range(8):
-            tf.print(losses[i])
-
-
-        PSNRs = [tf.image.psnr(label_image, B_from_A, 1) for B_from_A in B_from_As]
-
-        return B_from_As[0], losses, PSNRs
+    def inference(self, input_image):
+        return [g(input_image) for g in self.generators]
 
     def test_step(self, test_dataset, summary_name = "test"):
         outputs = [[] for _ in range(self.config.num_metrics)]
@@ -138,11 +101,9 @@ class Model_Train():
         PSNRs = [[] for _ in range(self.config.num_metrics)]
 
         for input_image_test,label_image_test in test_dataset:
-            #B_from_As = self.inference(input_image_test)
-            results, losses, PSNRs = self.testing(input_image_test,label_image_test)
+            B_from_As = self.inference(input_image_test)
             print("inference",losses )
 
-        '''
             for e, B_from_A in enumerate(B_from_As):
                 losses[e].append(L1loss(label_image_test, B_from_A).numpy())
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
@@ -166,8 +127,7 @@ class Model_Train():
         log = "\n"
         for i in range(self.config.num_metrics):
             log += "[output{}] loss = {}, psnr = {}\n".format(i,np.mean(losses[i]),np.mean(PSNRs[i]))
-        '''
-        log = ""
+
         return log
 
 
