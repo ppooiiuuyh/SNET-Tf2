@@ -71,7 +71,8 @@ def S_Net_contskip(channels = 3, num_metrics=3 , structure_type='classic'):
 
     decoders = [ tf.keras.layers.Add()([DecoderBlock(cu), inputs]) for cu in convolution_units]
     models = [tf.keras.Model(inputs=[inputs], outputs=[dec]) for dec in decoders]
-    return models
+    #return models
+    return tf.keras.Model(inputs=[inputs], outputs=decoders)
 
 def S_Net_progressiveskip(channels = 3, num_metrics=3 , structure_type='classic'):
     inputs = tf.keras.layers.Input(shape=[None, None, channels])
