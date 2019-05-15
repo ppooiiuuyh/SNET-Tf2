@@ -54,7 +54,7 @@ class Tensor_Dataset_Wraper():
 
 
 def make_iterator_offtime(config):
-    def make_image_patches (inputs, crop = True):
+    def make_image_patches (inputs, is_train = True):
         file_names = [file_name.numpy().decode("utf-8") for file_name in inputs]
         inputs = []
         labels = []
@@ -64,7 +64,7 @@ def make_iterator_offtime(config):
             label.save(buffer, format='jpeg', quality=config.jpeg_quality)
             input = PIL.Image.open(buffer)
 
-            if crop :
+            if is_train :
                 """ crop patch """
                 crop_y = 0
                 while crop_y + config.patch_size < label.height:
@@ -78,8 +78,8 @@ def make_iterator_offtime(config):
                     crop_y += int(random.randint(37,62))
 
             else :
-                inputs.append(normalize(np.array(input)))
-                labels.append(normalize(np.array(label)))
+                inputs.append(normalize(np.array(input).reshape[1,input.height,input.width, config.channels]))
+                labels.append(normalize(np.array(label).reshape[1,label.height, label.width, config.channels]))
 
         print("total patches : ", len(inputs))
         return np.array(inputs), np.array(labels)
