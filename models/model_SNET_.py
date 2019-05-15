@@ -108,7 +108,7 @@ class Model_Train():
 
         for i in range(8):
             tf.print(results[i].shape)
-        return results
+        return results[0]
 
     def test_step(self, test_dataset, summary_name = "test"):
         outputs = [[] for _ in range(self.config.num_metrics)]
