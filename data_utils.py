@@ -90,7 +90,6 @@ def make_iterator_offtime(config):
                 buffer = io.BytesIO()
                 label.save(buffer, format='jpeg', quality=config.jpeg_quality)
                 input = PIL.Image.open(buffer)
-
                 inputs.append(normalize(np.array(input).reshape([1,input.height,input.width, config.channels])))
                 labels.append(normalize(np.array(label).reshape([1,label.height, label.width, config.channels])))
 
@@ -108,7 +107,7 @@ def make_iterator_offtime(config):
     """ prepare test dataset """
     paired_file_names = glob(os.path.normcase(os.path.join(config.data_root_test, "*.*")))
     paired_input_list, paired_label_list = make_image_patches(paired_file_names,is_train = False)
-    paired_test_dataset = (paired_input_list, paired_label_list)
+    paired_test_dataset = [(paired_input, paired_label) for paired_input, paired_label in zip(paired_input_list,paired_label_list)]
 
     return paired_train_iterator, paired_test_dataset
 
@@ -184,11 +183,11 @@ if __name__ == "__main__":
     train_iterator, test_dataset = make_iterator_offtime(config)
 
     for test_input, test_label in test_dataset:
-        print(test_input.shape,test_label.shape)
+        print(test_input.shape)
     for test_input, test_label in test_dataset:
         print(test_input.shape,test_label.shape)
-    for train_input, train_label in train_iterator :
-        print(train_input.shape, train_label.shape)
+    #for train_input, train_label in train_iterator :
+    #    print(train_input.shape, train_label.shape)
 
 
 """
