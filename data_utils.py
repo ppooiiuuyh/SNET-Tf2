@@ -156,11 +156,9 @@ def make_iterator_ontime(config):
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_test,"*.*")))
     paired_file_names = paired_file_names.batch(1,drop_remainder=True).shuffle(config.buffer_size)
     paired_iterator = Tensor_Dataset_Wraper(paired_file_names, map_func= partial(mapping_function_for_paired_iterator,crop=False))
-    test_iterator = paired_iterator
+    test_dataset= paired_iterator
 
-    return train_iterator, test_iterator  #, reference_iterator
-
-
+    return train_iterator, test_dataset  #, reference_iterator
 
 
 
@@ -183,12 +181,14 @@ if __name__ == "__main__":
     config = parser.parse_args()
     tf.executing_eagerly()
 
-    train_iterator, test_dataset = make_iterator_offtime(config)
-    for test_input, test_label in test_dataset:
-        print(test_input.shape,test_label.shape)
+    train_iterator, test_dataset = make_iterator_ontime(config)
 
     for train_input, train_label in train_iterator :
         print(train_input.shape, train_label.shape)
+
+    for test_input, test_label in test_dataset:
+        print(test_input.shape,test_label.shape)
+
 """
     train_iterator, test_dataset = make_iterator_ontime(config)
     print(train_iterator)
