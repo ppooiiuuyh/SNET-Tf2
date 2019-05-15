@@ -86,7 +86,7 @@ def make_iterator_ontime(config):
         for file_name in file_names :
             file_name = tf.io.read_file(file_name)
             image = tf.io.decode_image(file_name, channels=3, dtype=tf.dtypes.uint8)
-            label = PIL.Image.fromarray(image).convert('RGB')
+            label = PIL.Image.fromarray(image.numpy()).convert('RGB')
             if crop :
                 # randomly crop patch from training set
                 crop_x = random.randint(0, label.width - config.patch_size)
