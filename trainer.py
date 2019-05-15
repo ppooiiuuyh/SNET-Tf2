@@ -83,7 +83,7 @@ while True : #manuallry stopping
     """ train """
     if model.step * config.batch_size % config.buffer_size <= config.batch_size :
         train_iterator, test_dataset = make_iterator_offtime(config)
-        
+
     log = model.train_step(train_iterator, log_interval= 100)
     print("[train] step:{} elapse:{} {}".format(model.step.numpy(), time.time() - start, log))
 
