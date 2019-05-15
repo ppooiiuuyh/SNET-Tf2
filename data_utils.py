@@ -80,11 +80,13 @@ def make_iterator_ontime(config):
         return inputs, labels
 
     def mapping_function_for_paired_iterator2(inputs, crop = True):
-        images = [image for image in inputs.numpy()]
+        #file_names = [file_name.decode("utf-8") for file_name in inputs.numpy()]
         inputs = []
         labels = []
-        for image in images :
-            label = PIL.Image.fromarray(image)
+        for file_name in inputs :
+            file_name = tf.io.read_file(file_name)
+            image = tf.io.decode_image(file_name, channels=3, dtype=tf.dtypes.uint8)
+            label = PIL.Image.fromarray(image).convert('RGB')
             if crop :
                 # randomly crop patch from training set
                 crop_x = random.randint(0, label.width - config.patch_size)
@@ -107,12 +109,13 @@ def make_iterator_ontime(config):
     def load_image(image_path, channels = 3):
         image_path = tf.io.read_file(image_path)
         image = tf.io.decode_image(image_path, channels=channels, dtype=tf.dtypes.uint8)
+
         return image
 
     """ prepare train iterator """
     # prepare paired iterator
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_train,"*.*")))
-    paired_dataset = paired_file_names.map(map_func=load_image).batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat().prefetch(buffer_size=100)
+    paired_dataset = paired_file_names.batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat().prefetch(buffer_size=100)
     paired_iterator = Tensor_Iterator_Wraper(paired_dataset.__iter__(), map_func= mapping_function_for_paired_iterator2)
     train_iterator = paired_iterator
 
