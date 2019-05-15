@@ -54,13 +54,12 @@ class Tensor_Dataset_Wraper():
 
 
 def make_iterator_offtime(config):
-    def make_image_patches (inputs, is_train = True):
-        file_names = [file_name.numpy().decode("utf-8") for file_name in inputs]
+    def make_image_patches (inputs, is_train = True, buffer_size = 2000):
         inputs = []
         labels = []
 
         if is_train:
-            for file_name in tqdm(file_names):
+            for file_name in tqdm(inputs):
                 label = PIL.Image.open(file_name).convert('RGB')
                 buffer = io.BytesIO()
                 label.save(buffer, format='jpeg', quality=config.jpeg_quality)
@@ -68,9 +67,9 @@ def make_iterator_offtime(config):
 
                 """ crop patch """
                 crop_y = 0
-                while crop_y + config.patch_size < label.height:
+                while crop_y + config.patch_size < label.height and len(inputs)<buffer_size:
                     crop_x = 0
-                    while crop_x + config.patch_size < label.width:
+                    while crop_x + config.patch_size < label.width and len(inputs)<buffer_size:
                         input_patch = input.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
                         label_patch = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
                         inputs.append(normalize(np.array(input_patch)))
@@ -83,7 +82,7 @@ def make_iterator_offtime(config):
 
 
         else :
-            for file_name in tqdm(file_names):
+            for file_name in tqdm(inputs):
                 label = PIL.Image.open(file_name).convert('RGB')
                 buffer = io.BytesIO()
                 label.save(buffer, format='jpeg', quality=config.jpeg_quality)
@@ -98,13 +97,13 @@ def make_iterator_offtime(config):
 
 
     """ prepare train iterator """
-    paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_train, "*.*")))
+    paired_file_names = random.shuffle(glob(os.path.normcase(os.path.join(config.data_root_train, "*.*"))))
     paired_input_patches, paired_label_patches = make_image_patches(paired_file_names)
     paired_train_dataset = tf.data.Dataset.from_tensor_slices((paired_input_patches,paired_label_patches)).batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat()
     paired_train_iterator = paired_train_dataset.__iter__()
 
     """ prepare test dataset """
-    paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_test, "*.*")))
+    paired_file_names = glob(os.path.normcase(os.path.join(config.data_root_test, "*.*")))
     paired_input_list, paired_label_list = make_image_patches(paired_file_names,is_train = False)
     paired_test_dataset = zip(paired_input_list, paired_label_list)
 
