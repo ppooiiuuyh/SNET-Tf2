@@ -75,8 +75,8 @@ def make_iterator_offtime(config):
                         label_patch = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
                         inputs.append(normalize(np.array(input_patch)))
                         labels.append(normalize(np.array(label_patch)))
-                        crop_x += int(random.randint(37*5,62*5))
-                    crop_y += int(random.randint(37*5,62*5))
+                        crop_x += int(random.randint(37*7,62*7))
+                    crop_y += int(random.randint(37*7,62*7))
 
             print("total patches : ", len(inputs))
             return np.array(inputs), np.array(labels)
@@ -121,11 +121,6 @@ def make_iterator_ontime(config):
             label = PIL.Image.open(file_name).convert('RGB')
 
             if crop :
-                # pre crop
-                crop_x = random.randint(0, label.width // 4)
-                crop_y = random.randint(0, label.height // 4)
-                label = label.crop((crop_x,crop_y, crop_x+label.width // 4, crop_y + label.height // 4))
-
                 # randomly crop patch from training set
                 crop_x = random.randint(0, label.width - config.patch_size)
                 crop_y = random.randint(0, label.height - config.patch_size)
