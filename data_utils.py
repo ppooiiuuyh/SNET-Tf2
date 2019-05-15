@@ -74,8 +74,8 @@ def make_iterator_offtime(config):
                         label_patch = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
                         inputs.append(normalize(np.array(input_patch)))
                         labels.append(normalize(np.array(label_patch)))
-                        crop_x += int(random.randint(74,186))
-                    crop_y += int(random.randint(74,186))
+                        crop_x += int(random.randint(37*5,62*5))
+                    crop_y += int(random.randint(37*5,62*5))
 
             else :
                 inputs.append(normalize(np.array(input).reshape[1,input.height,input.width, config.channels]))
