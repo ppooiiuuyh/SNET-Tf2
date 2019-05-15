@@ -103,12 +103,15 @@ class Model_Train():
     """
     # Typically, the test dataset is not large
     @tf.function
-    def inference(self, input_image):
-        results = [g(input_image) for g in self.generators]
+    def testing(self, input_image, label_image):
+
+        B_from_As = [g(input_image) for g in self.generators]
+        losses = [L1loss(label_image, B_from_A) for B_from_A in B_from_As]
+        PSNRs = [tf.image.psnr(label_image, B_from_A, 1) for B_from_A in B_from_As]
 
         for i in range(8):
-            tf.print(results[i].shape)
-        return results[0]
+            tf.print(B_from_As[i].shape, )
+        return B_from_As[0], losses, PSNRs
 
     def test_step(self, test_dataset, summary_name = "test"):
         outputs = [[] for _ in range(self.config.num_metrics)]
@@ -117,8 +120,8 @@ class Model_Train():
 
         for input_image_test,label_image_test in test_dataset:
             #B_from_As = self.inference(input_image_test)
-            results = self.inference(input_image_test)
-            print("inference")
+            results, losses, PSNRs = self.testing(input_image_test,label_image_test)
+            print("inference",losses )
 
         '''
             for e, B_from_A in enumerate(B_from_As):
