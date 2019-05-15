@@ -17,7 +17,7 @@ class Model_Train():
         if self.config.exp_type == 0:
             self.generators = S_Net(num_metrics=self.config.num_metrics, structure_type= 'advanced')
         elif self.config.exp_type == 1:
-            self.generator = S_Net_contskip(num_metrics=self.config.num_metrics, structure_type='advanced')
+            self.generators = S_Net_contskip(num_metrics=self.config.num_metrics, structure_type='advanced')
         elif self.config.exp_type == 2:
             self.generator = S_Net_progressiveskip(num_metrics=self.config.num_metrics, structure_type='advanced')
         elif self.config.exp_type == 3:
@@ -30,7 +30,14 @@ class Model_Train():
         self.step = tf.Variable(0,dtype=tf.int64)
         self.ckpt = tf.train.Checkpoint(step=self.step,
                                         generator_optimizer=self.generator_optimizer,
-                                        generators=self.generators,
+                                        generator0=self.generators[0],
+                                        #generator1=self.generators[1],
+                                        #generator2=self.generators[2],
+                                        #generator3=self.generators[3],
+                                        #generator4=self.generators[4],
+                                        #generator5=self.generators[5],
+                                        #generator6=self.generators[6],
+                                        #generator7=self.generators[7],
                                         )
         self.save_manager = tf.train.CheckpointManager(self.ckpt, self.config.checkpoint_dir, max_to_keep=3)
         self.save  = lambda : self.save_manager.save(checkpoint_number=self.step) #exaple : model.save()
