@@ -70,7 +70,7 @@ prepare dataset
 # reference_iterator.__next__() = reference # repeat
 #train_iterator, test_dataset, reference_iterator = make_iterator(config, line_normalizer= line_normalizer) #preaload all images on memory
 #train_iterator, test_dataset = make_iterator_ontime(config) #load each batches ontime
-train_iterator, test_dataset = make_iterator_offtime(config) #load each batches ontime
+#train_iterator, test_dataset = make_iterator_offtime(config) #load each batches ontime
 
 
 
@@ -81,7 +81,7 @@ train
 ---------------------------------------------------------------------"""
 while True : #manuallry stopping
     """ train """
-    if model.step * config.batch_size % config.buffer_size <= config.batch_size :
+    if model.step * config.batch_size % config.buffer_size < config.batch_size :
         train_iterator, test_dataset = make_iterator_offtime(config)
 
     log = model.train_step(train_iterator, log_interval= 100)
