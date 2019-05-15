@@ -105,9 +105,10 @@ class Model_Train():
     @tf.function
     def inference(self, input_image):
         results = [g(input_image) for g in self.generators]
+
         for i in range(8):
             tf.print(results[i].shape)
-        return
+        return results
 
     def test_step(self, test_dataset, summary_name = "test"):
         outputs = [[] for _ in range(self.config.num_metrics)]
@@ -116,7 +117,7 @@ class Model_Train():
 
         for input_image_test,label_image_test in test_dataset:
             #B_from_As = self.inference(input_image_test)
-            self.inference(input_image_test)
+            results = self.inference(input_image_test)
             print("inference")
 
         '''
