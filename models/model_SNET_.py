@@ -93,7 +93,7 @@ class Model_Train():
 
 
     # Typically, the test dataset is not large
-    @tf.function
+    #@tf.function
     def inference(self, input_image):
         result = [g(input_image) for g in self.generators]
         return result
