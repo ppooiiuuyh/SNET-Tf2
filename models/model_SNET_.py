@@ -104,8 +104,9 @@ class Model_Train():
     # Typically, the test dataset is not large
     @tf.function
     def inference(self, input_image):
-        result = [g(input_image) for g in self.generators]
-        tf.print(result)
+        for i in range(8):
+            result = self.generators[i](input_image)
+            tf.print(result)
         return
 
     def test_step(self, test_dataset, summary_name = "test"):
