@@ -119,7 +119,13 @@ def make_iterator_ontime(config):
         labels = []
         for file_name in file_names :
             label = PIL.Image.open(file_name).convert('RGB')
+
             if crop :
+                # pre crop
+                crop_x = random.randint(0, label.width // 4)
+                crop_y = random.randint(0, label.height // 4)
+                label = label.crop((crop_x,crop_y, crop_x+label.width // 4, crop_y + label.height // 4))
+
                 # randomly crop patch from training set
                 crop_x = random.randint(0, label.width - config.patch_size)
                 crop_y = random.randint(0, label.height - config.patch_size)
