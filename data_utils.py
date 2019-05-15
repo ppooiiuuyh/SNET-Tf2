@@ -52,6 +52,53 @@ class Tensor_Dataset_Wraper():
     def __iter__(self):
         return Tensor_Iterator_Wraper(self.dataset.__iter__(),self.map_func)
 
+
+def make_iterator_offtime(config):
+    def make_image_patches (inputs, crop = True):
+        file_names = [file_name.numpy().decode("utf-8") for file_name in inputs]
+        inputs = []
+        labels = []
+        for file_name in tqdm(file_names):
+            label = PIL.Image.open(file_name).convert('RGB')
+            buffer = io.BytesIO()
+            label.save(buffer, format='jpeg', quality=config.jpeg_quality)
+            input = PIL.Image.open(buffer)
+
+            if crop :
+                """ crop patch """
+                crop_y = 0
+                while crop_y + config.patch_size < label.height:
+                    crop_x = 0
+                    while crop_x + config.patch_size < label.width:
+                        input_patch = input.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
+                        label_patch = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
+                        inputs.append(normalize(np.array(input_patch)))
+                        labels.append(normalize(np.array(label_patch)))
+                        crop_x += int(random.randint(37,62))
+                    crop_y += int(random.randint(37,62))
+
+            else :
+                inputs.append(normalize(np.array(input)))
+                labels.append(normalize(np.array(label)))
+
+        print("total patches : ", len(inputs))
+        return np.array(inputs), np.array(labels)
+
+
+    """ prepare train iterator """
+    paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_train, "*.*")))
+    paired_input_patches, paired_label_patches = make_image_patches(paired_file_names)
+    paired_train_dataset = tf.data.Dataset.from_tensor_slices((paired_input_patches,paired_label_patches)).batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat()
+    paired_train_iterator = paired_train_dataset.__iter__()
+
+    """ prepare test dataset """
+    paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_test, "*.*")))
+    paired_input_patches, paired_label_patches = make_image_patches(paired_file_names,crop = False)
+    paired_test_dataset = zip(paired_input_patches, paired_label_patches)
+
+    return paired_train_iterator, paired_test_dataset
+
+
 def make_iterator_ontime(config):
     """ mapping functions """
     def mapping_function_for_paired_iterator(inputs, crop = True):
@@ -79,44 +126,11 @@ def make_iterator_ontime(config):
         labels = np.array(labels)
         return inputs, labels
 
-    def mapping_function_for_paired_iterator2(file_names, crop = True):
-        #file_names = [file_name.decode("utf-8") for file_name in inputs.numpy()]
-        inputs = []
-        labels = []
-        for file_name in file_names :
-            file_name = tf.io.read_file(file_name)
-            image = tf.io.decode_image(file_name, channels=3, dtype=tf.dtypes.uint8)
-            label = PIL.Image.fromarray(image.numpy()).convert('RGB')
-            if crop :
-                # randomly crop patch from training set
-                crop_x = random.randint(0, label.width - config.patch_size)
-                crop_y = random.randint(0, label.height - config.patch_size)
-                label = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
-
-            # additive jpeg noise
-            buffer = io.BytesIO()
-            label.save(buffer, format='jpeg', quality=config.jpeg_quality)
-            input = PIL.Image.open(buffer)
-
-            # normalization and appending
-            inputs.append(normalize(np.array(input)))
-            labels.append(normalize(np.array(label)))
-
-        inputs = np.array(inputs)
-        labels = np.array(labels)
-        return inputs, labels
-
-    def load_image(image_path, channels = 3):
-        image_path = tf.io.read_file(image_path)
-        image = tf.io.decode_image(image_path, channels=channels, dtype=tf.dtypes.uint8)
-
-        return image
-
     """ prepare train iterator """
     # prepare paired iterator
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_train,"*.*")))
     paired_dataset = paired_file_names.batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat().prefetch(buffer_size=100)
-    paired_iterator = Tensor_Iterator_Wraper(paired_dataset.__iter__(), map_func= mapping_function_for_paired_iterator2)
+    paired_iterator = Tensor_Iterator_Wraper(paired_dataset.__iter__(), map_func= mapping_function_for_paired_iterator)
     train_iterator = paired_iterator
 
 
@@ -126,15 +140,6 @@ def make_iterator_ontime(config):
     paired_iterator = Tensor_Dataset_Wraper(paired_file_names, map_func= partial(mapping_function_for_paired_iterator,crop=False))
     test_iterator = paired_iterator
 
-    """
-    list_files_tests = sorted(glob(os.path.join(os.path.normcase(config.data_root_test),"*.*")))
-    test_dataset = []
-    for l in list_files_tests:
-        flag_channels = cv2.IMREAD_GRAYSCALE if config.channels == 1 else cv2.IMREAD_COLOR
-        img = cv2.imread(l, flags=flag_channels)[...,::-1]
-        img = np.expand_dims(img,axis=0)
-        test_dataset.append((img.astype(np.float32)  ))
-    """
     return train_iterator, test_iterator  #, reference_iterator
 
 
@@ -146,10 +151,10 @@ if __name__ == "__main__":
     parser.add_argument("--gpu", type=str, default=4)  # -1 for CPU
     parser.add_argument("--crop_size", type=list, default=[512, 512], nargs="+", help='Image size after crop.')
     parser.add_argument("--buffer_size", type=int, default=20000, help='Data buffer size.')
-    parser.add_argument("--batch_size", type=int, default=16, help='Minibatch size(global)')
+    parser.add_argument("--batch_size", type=int, default=2, help='Minibatch size(global)')
     parser.add_argument("--patch_size", type=int, default=48, help='Minibatch size(global)')
     parser.add_argument("--jpeg_quality", type=int, default=20, help='Minibatch size(global)')
-    parser.add_argument("--data_root_train", type=str, default='./dataset/train/BSD400', help='Data root dir')
+    parser.add_argument("--data_root_train", type=str, default='./dataset/test/Set5', help='Data root dir')
     parser.add_argument("--data_root_test", type=str, default='./dataset/test/Set5', help='Data root dir')
     parser.add_argument("--channels", type=int, default=3, help='Channel size')
     parser.add_argument("--model_tag", type=str, default="default", help='Exp name to save logs/checkpoints.')
@@ -160,6 +165,13 @@ if __name__ == "__main__":
     config = parser.parse_args()
     tf.executing_eagerly()
 
+    train_iterator, test_dataset = make_iterator_offtime(config)
+    for test_input, test_label in test_dataset:
+        print(test_input.shape,test_label.shape)
+
+    for train_input, train_label in train_iterator :
+        print(train_input.shape, train_label.shape)
+"""
     train_iterator, test_dataset = make_iterator_ontime(config)
     print(train_iterator)
 
@@ -179,4 +191,4 @@ if __name__ == "__main__":
         print(inputs.shape, labels.shape)
         plt.imshow(np.concatenate([inputs[0],labels[0]],axis=1))
         plt.show()
-
+"""
