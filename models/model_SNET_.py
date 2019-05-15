@@ -104,7 +104,8 @@ class Model_Train():
     # Typically, the test dataset is not large
     @tf.function
     def inference(self, input_image):
-        return [g(input_image) for g in self.generators]
+        result = [g(input_image) for g in self.generators]
+        return
 
     def test_step(self, test_dataset, summary_name = "test"):
         outputs = [[] for _ in range(self.config.num_metrics)]
@@ -112,7 +113,8 @@ class Model_Train():
         PSNRs = [[] for _ in range(self.config.num_metrics)]
 
         for input_image_test,label_image_test in test_dataset:
-            B_from_As = self.inference(input_image_test)
+            #B_from_As = self.inference(input_image_test)
+            self.inference(input_image_test)
             print("inference")
 
         '''
