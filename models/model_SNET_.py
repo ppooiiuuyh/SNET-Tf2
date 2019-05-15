@@ -27,7 +27,7 @@ class Model_Train():
         self.generator_optimizer = tf.keras.optimizers.Adam(self.config.learning_rate)
 
         """ saver """
-        self.step = tf.Variable(0,dtype=tf.int64)
+        self.step = tf.Variable(1,dtype=tf.int64)
         self.ckpt = tf.train.Checkpoint(step=self.step,
                                         generator_optimizer=self.generator_optimizer,
                                         generator0=self.generators[0],
@@ -44,30 +44,44 @@ class Model_Train():
 
 
 
+
+    # Typically, the test dataset is not large
     @tf.function
-    def training(self, inputs):
-        paired_input, paired_target = inputs
-        with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
-            B_from_As = [g(paired_input) for g in self.generators]
+    def inference(self, input_image):
+        return self.generator(input_image)
 
-            """ loss for generator """
-            gen_losses = [L1loss(paired_target, B_from_A) for B_from_A in B_from_As]
-            gen_loss = tf.reduce_mean(gen_losses)
+    def test_step(self, test_dataset, summary_name = "test"):
+        outputs = [[] for _ in range(self.config.num_metrics)]
+        losses = [[] for _ in range(self.config.num_metrics)]
+        PSNRs = [[] for _ in range(self.config.num_metrics)]
 
-        """ optimize """
-        G_vars = []
-        for g in self.generators:
-            G_vars += g.trainable_variables
-        G_vars = list(set(G_vars))
-        generator_gradients = gen_tape.gradient(gen_loss, G_vars)
-        self.generator_optimizer.apply_gradients(zip(generator_gradients, G_vars))
+        for input_image_test,label_image_test in test_dataset:
+            B_from_As = self.inference(input_image_test)
+            for e, B_from_A in enumerate(B_from_As):
+                losses[e].append(L1loss(label_image_test, B_from_A).numpy())
+                outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
+                #label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
+                #label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
+                PSNRs[e].append(tf.image.psnr(label_image_test,B_from_A,1).numpy())
 
-        inputs_concat = tf.concat([paired_input, paired_target], axis=2)
-        return_dicts = {"inputs_concat" :inputs_concat}
-        return_dicts.update({'gen_loss{}'.format(e) : l  for e,l in enumerate(gen_losses)})
-        return_dicts.update({'gen_loss' : gen_loss})
-        return_dicts.update({'B_from_A{}'.format(e) : tf.concat([paired_input,l,paired_target],axis=2)  for e,l in enumerate(B_from_As)})
-        return return_dicts
+
+        """ log summary """
+        if summary_name and self.step.numpy() %1000 == 0:
+            with self.train_summary_writer.as_default():
+                for e, output in enumerate(outputs):
+                    tf.summary.image("{}_B_from_A_{}_0".format(summary_name,e), denormalize(output[0]), step=self.step)
+                    tf.summary.image("{}_B_from_A_{}_1".format(summary_name,e), denormalize(output[1]), step=self.step)
+                for e, loss in enumerate(losses):
+                    tf.summary.scalar("{}_loss_{}".format(summary_name, e),np.mean(loss), step=self.step)
+                for e, PSNR in enumerate(PSNRs):
+                    tf.summary.scalar("{}_psnr_{}".format(summary_name, e),np.mean(PSNR), step=self.step)
+
+        """ return log str """
+        log = "\n"
+        for i in range(self.config.num_metrics):
+            log += "[output{}] loss = {}, psnr = {}\n".format(i,np.mean(losses[i]),np.mean(PSNRs[i]))
+        return log
+
 
 
 
