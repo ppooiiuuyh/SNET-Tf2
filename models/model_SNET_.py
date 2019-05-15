@@ -106,11 +106,16 @@ class Model_Train():
     def testing(self, input_image, label_image):
 
         B_from_As = [g(input_image) for g in self.generators]
-        losses = [L1loss(label_image, B_from_A) for B_from_A in B_from_As]
+        for i in range(8):
+            tf.print(B_from_As[i][0,0,0,0])
+
+        losses = [L1loss(label_image, B_from_As) for B_from_A in B_from_As]
+        for i in range(8):
+            tf.print(losses[i])
+
+
         PSNRs = [tf.image.psnr(label_image, B_from_A, 1) for B_from_A in B_from_As]
 
-        for i in range(8):
-            tf.print(B_from_As[i].shape, )
         return B_from_As[0], losses, PSNRs
 
     def test_step(self, test_dataset, summary_name = "test"):
