@@ -119,7 +119,7 @@ class Model_Train():
         return outputs,losses,PSNRs
 
     def test_step(self, test_dataset, summary_name = "test"):
-        outputs, losses, PSNRs = self.testing(test_dataset)
+        outputs, losses, PSNRs = self.testing(test_dataset.__iter__())
         """ log summary """
         if summary_name and self.step.numpy() %100 == 0:
             with self.train_summary_writer.as_default():
