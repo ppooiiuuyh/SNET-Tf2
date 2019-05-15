@@ -79,11 +79,11 @@ def make_iterator_ontime(config):
         labels = np.array(labels)
         return inputs, labels
 
-    def mapping_function_for_paired_iterator2(inputs, crop = True):
+    def mapping_function_for_paired_iterator2(file_names, crop = True):
         #file_names = [file_name.decode("utf-8") for file_name in inputs.numpy()]
         inputs = []
         labels = []
-        for file_name in inputs :
+        for file_name in file_names :
             file_name = tf.io.read_file(file_name)
             image = tf.io.decode_image(file_name, channels=3, dtype=tf.dtypes.uint8)
             label = PIL.Image.fromarray(image).convert('RGB')
