@@ -105,6 +105,7 @@ def make_iterator_ontime(config):
         return inputs, labels
 
     def load_image(image_path, channels = 3):
+        image_path = tf.io.read_file(image_path)
         image = tf.io.decode_image(image_path, channels=channels, dtype=tf.dtypes.uint8)
         return image
 
