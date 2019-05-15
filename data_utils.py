@@ -13,7 +13,7 @@ import argparse
 import matplotlib.pyplot as plt
 import copy
 from functools import partial
-
+import multiprocessing
 
 
 def check_folder(log_dir):
@@ -78,8 +78,8 @@ def make_iterator_offtime(config):
                     crop_y += int(random.randint(37*5,62*5))
 
             else :
-                inputs.append(normalize(np.array(input).reshape[1,input.height,input.width, config.channels]))
-                labels.append(normalize(np.array(label).reshape[1,label.height, label.width, config.channels]))
+                inputs.append(normalize(np.array(input).reshape([1,input.height,input.width, config.channels])))
+                labels.append(normalize(np.array(label).reshape([1,label.height, label.width, config.channels])))
 
         print("total patches : ", len(inputs))
         return np.array(inputs), np.array(labels)
