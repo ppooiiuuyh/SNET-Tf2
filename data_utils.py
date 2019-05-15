@@ -54,13 +54,15 @@ class Tensor_Dataset_Wraper():
 
 
 def make_iterator_offtime(config):
-    def make_image_patches (file_names, is_train = True, buffer_size = 2000):
+    def make_image_patches (file_names, is_train = True):
         inputs = []
         labels = []
 
         if is_train:
             random.shuffle(file_names)
             for file_name in tqdm(file_names):
+                if len(inputs)>=config.buffer_size: break
+
                 label = PIL.Image.open(file_name).convert('RGB')
                 buffer = io.BytesIO()
                 label.save(buffer, format='jpeg', quality=config.jpeg_quality)
@@ -68,9 +70,9 @@ def make_iterator_offtime(config):
 
                 """ crop patch """
                 crop_y = 0
-                while crop_y + config.patch_size < label.height and len(inputs)<buffer_size:
+                while crop_y + config.patch_size < label.height and len(inputs)<config.buffer_size:
                     crop_x = 0
-                    while crop_x + config.patch_size < label.width and len(inputs)<buffer_size:
+                    while crop_x + config.patch_size < label.width and len(inputs)<config.buffer_size:
                         input_patch = input.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
                         label_patch = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
                         inputs.append(normalize(np.array(input_patch)))
