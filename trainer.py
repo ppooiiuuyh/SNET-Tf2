@@ -17,7 +17,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--exp_type", type=int, default=1, help='experiment type')
 parser.add_argument("--gpu", type=str, default=4)  # -1 for CPU
 parser.add_argument("--crop_size", type=list, default=[512, 512], nargs="+", help='Image size after crop.')
-parser.add_argument("--buffer_size", type=int, default=2000, help='Data buffer size.')
+parser.add_argument("--buffer_size", type=int, default=20000, help='Data buffer size.')
 parser.add_argument("--batch_size", type=int, default=16, help='Minibatch size(global)')
 parser.add_argument("--patch_size", type=int, default=48, help='Minibatch size(global)')
 parser.add_argument("--jpeg_quality", type=int, default=20, help='Minibatch size(global)')
