@@ -79,14 +79,39 @@ def make_iterator_ontime(config):
         labels = np.array(labels)
         return inputs, labels
 
+    def mapping_function_for_paired_iterator2(inputs, crop = True):
+        images = [image for image in inputs.numpy()]
+        inputs = []
+        labels = []
+        for image in images :
+            label = PIL.Image.fromarray(image)
+            if crop :
+                # randomly crop patch from training set
+                crop_x = random.randint(0, label.width - config.patch_size)
+                crop_y = random.randint(0, label.height - config.patch_size)
+                label = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
 
+            # additive jpeg noise
+            buffer = io.BytesIO()
+            label.save(buffer, format='jpeg', quality=config.jpeg_quality)
+            input = PIL.Image.open(buffer)
 
+            # normalization and appending
+            inputs.append(normalize(np.array(input)))
+            labels.append(normalize(np.array(label)))
+
+        inputs = np.array(inputs)
+        labels = np.array(labels)
+        return inputs, labels
+
+    def load_image(image_path, channels = 3):
+        tf.io.decode_image(image_path, channels=channels, dtype=tf.dtypes.uint8)
 
     """ prepare train iterator """
     # prepare paired iterator
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_train,"*.*")))
-    paired_file_names = paired_file_names.batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat()
-    paired_iterator = Tensor_Iterator_Wraper(paired_file_names.__iter__(), map_func= mapping_function_for_paired_iterator)
+    paired_file_names = paired_file_names.batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat().map(map_func=load_image).prefetch(buffer_size=100)
+    paired_iterator = Tensor_Iterator_Wraper(paired_file_names.__iter__(), map_func= mapping_function_for_paired_iterator2)
     train_iterator = paired_iterator
 
 
