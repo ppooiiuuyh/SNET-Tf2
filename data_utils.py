@@ -70,9 +70,9 @@ def make_iterator_offtime(config):
 
                 """ crop patch """
                 crop_y = 0
-                while crop_y + config.patch_size < label.height and len(inputs)<config.buffer_size:
+                while crop_y + config.patch_size < label.height:
                     crop_x = 0
-                    while crop_x + config.patch_size < label.width and len(inputs)<config.buffer_size:
+                    while crop_x + config.patch_size < label.width:
                         input_patch = input.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
                         label_patch = label.crop((crop_x, crop_y, crop_x + config.patch_size, crop_y + config.patch_size))
                         inputs.append(normalize(np.array(input_patch)))
@@ -103,7 +103,7 @@ def make_iterator_offtime(config):
     paired_file_names = glob(os.path.normcase(os.path.join(config.data_root_train, "*.*")))
     print(paired_file_names)
     paired_input_patches, paired_label_patches = make_image_patches(paired_file_names)
-    paired_train_dataset = tf.data.Dataset.from_tensor_slices((paired_input_patches,paired_label_patches)).batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size).repeat()
+    paired_train_dataset = tf.data.Dataset.from_tensor_slices((paired_input_patches,paired_label_patches)).batch(config.batch_size,drop_remainder=True).shuffle(config.buffer_size *2).repeat()
     paired_train_iterator = paired_train_dataset.__iter__()
 
     """ prepare test dataset """
