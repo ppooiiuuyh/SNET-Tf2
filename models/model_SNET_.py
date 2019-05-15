@@ -106,7 +106,7 @@ class Model_Train():
     def inference(self, input_image):
         for i in range(8):
             result = self.generators[i](input_image)
-            tf.print(result)
+            tf.print(result.shape)
         return
 
     def test_step(self, test_dataset, summary_name = "test"):
