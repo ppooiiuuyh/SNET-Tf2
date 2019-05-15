@@ -58,13 +58,14 @@ def make_iterator_offtime(config):
         file_names = [file_name.numpy().decode("utf-8") for file_name in inputs]
         inputs = []
         labels = []
-        for file_name in tqdm(file_names):
-            label = PIL.Image.open(file_name).convert('RGB')
-            buffer = io.BytesIO()
-            label.save(buffer, format='jpeg', quality=config.jpeg_quality)
-            input = PIL.Image.open(buffer)
 
-            if is_train :
+        if is_train:
+            for file_name in tqdm(file_names):
+                label = PIL.Image.open(file_name).convert('RGB')
+                buffer = io.BytesIO()
+                label.save(buffer, format='jpeg', quality=config.jpeg_quality)
+                input = PIL.Image.open(buffer)
+
                 """ crop patch """
                 crop_y = 0
                 while crop_y + config.patch_size < label.height:
@@ -77,12 +78,23 @@ def make_iterator_offtime(config):
                         crop_x += int(random.randint(37*5,62*5))
                     crop_y += int(random.randint(37*5,62*5))
 
-            else :
+            print("total patches : ", len(inputs))
+            return np.array(inputs), np.array(labels)
+
+
+        else :
+            for file_name in tqdm(file_names):
+                label = PIL.Image.open(file_name).convert('RGB')
+                buffer = io.BytesIO()
+                label.save(buffer, format='jpeg', quality=config.jpeg_quality)
+                input = PIL.Image.open(buffer)
+
                 inputs.append(normalize(np.array(input).reshape([1,input.height,input.width, config.channels])))
                 labels.append(normalize(np.array(label).reshape([1,label.height, label.width, config.channels])))
 
-        print("total patches : ", len(inputs))
-        return np.array(inputs), np.array(labels)
+            print("total images : ", len(inputs))
+            return inputs, labels
+
 
 
     """ prepare train iterator """
@@ -93,8 +105,8 @@ def make_iterator_offtime(config):
 
     """ prepare test dataset """
     paired_file_names = tf.data.Dataset.list_files(os.path.normcase(os.path.join(config.data_root_test, "*.*")))
-    paired_input_patches, paired_label_patches = make_image_patches(paired_file_names,is_train = False)
-    paired_test_dataset = zip(paired_input_patches, paired_label_patches)
+    paired_input_list, paired_label_list = make_image_patches(paired_file_names,is_train = False)
+    paired_test_dataset = zip(paired_input_list, paired_label_list)
 
     return paired_train_iterator, paired_test_dataset
 
