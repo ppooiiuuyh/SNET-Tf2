@@ -30,7 +30,7 @@ class Model_Train():
         self.step = tf.Variable(0,dtype=tf.int64)
         self.ckpt = tf.train.Checkpoint(step=self.step,
                                         generator_optimizer=self.generator_optimizer,
-                                        generator=self.generator,
+                                        generators=self.generators,
                                         )
         self.save_manager = tf.train.CheckpointManager(self.ckpt, self.config.checkpoint_dir, max_to_keep=3)
         self.save  = lambda : self.save_manager.save(checkpoint_number=self.step) #exaple : model.save()
