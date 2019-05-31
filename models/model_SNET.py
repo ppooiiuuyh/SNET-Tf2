@@ -7,6 +7,7 @@ from models.ops import *
 class Model_Train():
     def __init__(self, config):
         self.config = config
+        self.step = tf.Variable(0,dtype=tf.int64)
         self.build_model()
         log_dir = os.path.join(config.summary_dir)
         self.train_summary_writer = tf.summary.create_file_writer(log_dir)
@@ -27,7 +28,6 @@ class Model_Train():
         self.generator_optimizer = tf.keras.optimizers.Adam(learning_rate)
 
         """ saver """
-        self.step = tf.Variable(0,dtype=tf.int64)
         self.ckpt = tf.train.Checkpoint(step=self.step,
                                         generator_optimizer=self.generator_optimizer,
                                         generator=self.generator,
