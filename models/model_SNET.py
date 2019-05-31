@@ -100,8 +100,9 @@ class Model_Train():
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
                 #label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
                 #label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
-                PSNRs[e].append(tf.image.psnr(label_image_test[20:-21,20:-21],B_from_A.numpy()[21:-21,21:-21],1).numpy())
-                SSIMs[e].append(tf.image.ssim(label_image_test[20:-21,20:-21],B_from_A.numpy()[21:-21,21:-21],1).numpy())
+                crop_pad = self.config.patch_size//2
+                PSNRs[e].append(tf.image.psnr(label_image_test[crop_pad:-crop_pad-1, crop_pad:-crop_pad-1],B_from_A.numpy()[crop_pad:-crop_pad-1, crop_pad:-crop_pad-1],1).numpy())
+                SSIMs[e].append(tf.image.ssim(label_image_test[crop_pad:-crop_pad-1, crop_pad:-crop_pad-1],B_from_A.numpy()[crop_pad:-crop_pad-1, crop_pad:-crop_pad-1],1).numpy())
 
         """ log summary """
         if summary_name and self.step.numpy() %100 == 0:
