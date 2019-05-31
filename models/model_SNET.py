@@ -101,8 +101,8 @@ class Model_Train():
                 #label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
                 #label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
                 crop_pad = self.config.patch_size//2
-                A = tf.split(tf.image.rgb_to_yuv(tf.constant(label_image_test[crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
-                B = tf.split(tf.image.rgb_to_yuv(tf.constant( B_from_A.numpy()[crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
+                A = tf.split(tf.image.rgb_to_yuv(tf.convert_to_tensor(label_image_test[crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
+                B = tf.split(tf.image.rgb_to_yuv(tf.convert_to_tensor( B_from_A.numpy()[crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
                 PSNRs[e].append(tf.image.psnr(A,B,1).numpy())
                 SSIMs[e].append(tf.image.ssim(A,B,1).numpy())
 
