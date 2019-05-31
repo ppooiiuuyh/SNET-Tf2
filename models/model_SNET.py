@@ -23,8 +23,8 @@ class Model_Train():
         elif self.config.exp_type == 3:
             self.generator = S_Net_intermediated_awared(num_metrics=self.config.num_metrics, structure_type='advanced')
 
-
-        self.generator_optimizer = tf.keras.optimizers.Adam(self.config.learning_rate)
+        learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
+        self.generator_optimizer = tf.keras.optimizers.Adam(learning_rate)
 
         """ saver """
         self.step = tf.Variable(0,dtype=tf.int64)

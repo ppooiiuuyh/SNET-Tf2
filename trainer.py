@@ -96,6 +96,6 @@ while True : #manuallry stopping
 
 
     """ save model """
-    if model.step.numpy() % 10000 == 0:  save_path = model.save()
+    if model.step.numpy() % 50000 == 0:  save_path = model.save()
 
     model.step.assign_add(1)
