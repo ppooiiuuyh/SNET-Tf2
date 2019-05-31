@@ -98,11 +98,9 @@ class Model_Train():
             for e, B_from_A in enumerate(B_from_As):
                 losses[e].append(L1loss(label_image_test, B_from_A).numpy())
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
-                #label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
-                #label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
                 crop_pad = self.config.patch_size//2
-                A = tf.split(tf.image.rgb_to_yuv(tf.convert_to_tensor(label_image_test[crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
-                B = tf.split(tf.image.rgb_to_yuv(tf.convert_to_tensor( B_from_A.numpy()[crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
+                A = tf.split(tf.image.rgb_to_yuv(tf.convert_to_tensor(label_image_test[:,crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
+                B = tf.split(tf.image.rgb_to_yuv(tf.convert_to_tensor( B_from_A.numpy()[:,crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
                 PSNRs[e].append(tf.image.psnr(A,B,1).numpy())
                 SSIMs[e].append(tf.image.ssim(A,B,1).numpy())
 
