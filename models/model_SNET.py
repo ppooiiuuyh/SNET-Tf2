@@ -91,6 +91,7 @@ class Model_Train():
         outputs = [[] for _ in range(self.config.num_metrics)]
         losses = [[] for _ in range(self.config.num_metrics)]
         PSNRs = [[] for _ in range(self.config.num_metrics)]
+        SSIMs = [[] for _ in range(self.config.num_metrics)]
 
         for input_image_test,label_image_test in test_dataset:
             B_from_As = self.inference(input_image_test)
@@ -99,8 +100,8 @@ class Model_Train():
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
                 #label_image_test_crop = edge_crop(label_image_test), B_from_A = edge_crop(B_from_A)
                 #label_image_test_crop = cvt_ycbcr(label_image_test)[...,-1], B_from_A = cvt_ycbcr(B_from_A)[...,-1]
-                PSNRs[e].append(tf.image.psnr(label_image_test[20:,20:],B_from_A[20:,20:],1).numpy())
-
+                PSNRs[e].append(tf.image.psnr(label_image_test.numpy()[20:,20:],B_from_A.numpy()[20:,20:],1).numpy())
+                SSIMs[e].append(tf.image.ssim(label_image_test.numpy()[20:,20:],B_from_A.numpy()[20:,20:],1)).numpy()
 
         """ log summary """
         if summary_name and self.step.numpy() %100 == 0:
@@ -112,11 +113,13 @@ class Model_Train():
                     tf.summary.scalar("{}_loss_{}".format(summary_name, e),np.mean(loss), step=self.step)
                 for e, PSNR in enumerate(PSNRs):
                     tf.summary.scalar("{}_psnr_{}".format(summary_name, e),np.mean(PSNR), step=self.step)
+                for e, SSIM in enumerate(SSIMs):
+                    tf.summary.scalar("{}_ssim_{}".format(summary_name, e),np.mean(SSIM), step=self.step)
 
         """ return log str """
         log = "\n"
         for i in range(self.config.num_metrics):
-            log += "[output{}] loss = {}, psnr = {}\n".format(i,np.mean(losses[i]),np.mean(PSNRs[i]))
+            log += "[output{}] loss = {}, psnr = {}, ssim = {}\n".format(i,np.mean(losses[i]),np.mean(PSNRs[i]),np.mean(SSIMs[i]))
         return log
 
 
