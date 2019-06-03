@@ -24,8 +24,8 @@ class Model_Train():
         elif self.config.exp_type == 3:
             self.generator = S_Net_intermediated_awared(num_metrics=self.config.num_metrics, structure_type='advanced')
 
-        learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
-        self.generator_optimizer = tf.keras.optimizers.Adam(learning_rate)
+        self.learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
+        self.generator_optimizer = tf.keras.optimizers.Adam(self.learning_rate)
 
         """ saver """
         self.ckpt = tf.train.Checkpoint(step=self.step,
@@ -77,7 +77,7 @@ class Model_Train():
 
 
         """ return log str """
-        return "g_loss : {}".format(result_logs_dict["gen_loss"])
+        return "g_loss : {} lr : {}".format(result_logs_dict["gen_loss"], self.learning_rate)
 
 
 
@@ -98,7 +98,7 @@ class Model_Train():
             for e, B_from_A in enumerate(B_from_As):
                 losses[e].append(L1loss(label_image_test, B_from_A).numpy())
                 outputs[e].append(np.concatenate([input_image_test,B_from_A.numpy(),label_image_test],axis=2))
-                crop_pad = self.config.patch_size//2
+                crop_pad = 8
                 A = tf.split(tf.image.rgb_to_yuv(tf.convert_to_tensor(label_image_test[:,crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
                 B = tf.split(tf.image.rgb_to_yuv(tf.convert_to_tensor( B_from_A.numpy()[:,crop_pad:-crop_pad - 1, crop_pad:-crop_pad - 1] )), [1,2],-1)[0]
                 PSNRs[e].append(tf.image.psnr(A,B,1).numpy())

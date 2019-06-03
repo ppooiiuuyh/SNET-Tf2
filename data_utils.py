@@ -60,7 +60,7 @@ def make_iterator_offtime(config):
 
         if is_train:
             random.shuffle(file_names)
-            for file_name in tqdm(file_names):
+            for file_name in (file_names):
                 if len(inputs)>=config.buffer_size: break
 
                 label = PIL.Image.open(file_name).convert('RGB')
@@ -85,7 +85,7 @@ def make_iterator_offtime(config):
 
 
         else :
-            for file_name in tqdm(file_names):
+            for file_name in (file_names):
                 label = PIL.Image.open(file_name).convert('RGB')
                 buffer = io.BytesIO()
                 label.save(buffer, format='jpeg', quality=config.jpeg_quality)

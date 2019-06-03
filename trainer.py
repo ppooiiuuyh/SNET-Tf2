@@ -85,12 +85,12 @@ while True : #manuallry stopping
         train_iterator, test_dataset = make_iterator_offtime(config)
 
     log = model.train_step(train_iterator, log_interval= 100)
-    if model.step.numpy() % 200 == 0:
+    if model.step.numpy() % 1000 == 0:
         print("[train] step:{} elapse:{} {}".format(model.step.numpy(), time.time() - start, log))
 
 
     """ test """
-    if model.step.numpy() % 6000 == 0:
+    if model.step.numpy() % 5000 == 0:
         log = model.test_step(test_dataset, summary_name="test")
         print("[test] step:{} elapse:{} {}".format(model.step.numpy(), time.time() - start, log))
 
