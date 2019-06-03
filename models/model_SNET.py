@@ -13,8 +13,6 @@ class Model_Train():
         log_dir = os.path.join(config.summary_dir)
         self.train_summary_writer = tf.summary.create_file_writer(log_dir)
 
-    def learning_late_decayer_add_underbound(self):
-
 
     def build_model(self):
         """ model """
