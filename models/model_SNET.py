@@ -25,7 +25,7 @@ class Model_Train():
             self.generator = S_Net_intermediated_awared(num_metrics=self.config.num_metrics, structure_type='advanced')
 
         #self.learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
-        self.learning_rate =  tf.maximum( tf.keras.optimizers.schedules.ExponentialDecay(self.config.learning_rate,decay_steps=10000, decay_rate=0.1, staircase=True),0.000001)
+        self.learning_rate =  tf.maximum( tf.compat.v1.train.exponential_decay(self.config.learning_rate, self.step, 10000, 0.1,  staircase=False,   name=None),0.000001)
         self.generator_optimizer = tf.keras.optimizers.Adam(self.learning_rate)
 
         """ saver """
