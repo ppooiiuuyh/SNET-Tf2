@@ -24,7 +24,8 @@ class Model_Train():
         elif self.config.exp_type == 3:
             self.generator = S_Net_intermediated_awared(num_metrics=self.config.num_metrics, structure_type='advanced')
 
-        self.learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
+        #self.learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
+        self.learning_rate =  tf.maximum( tf.keras.optimizers.schedules.ExponentialDecay(self.config.learning_rate,decay_steps=10000, decay_rate=0.1, staircase=True),0.000001)
         self.generator_optimizer = tf.keras.optimizers.Adam(self.learning_rate)
 
         """ saver """
@@ -50,6 +51,7 @@ class Model_Train():
         """ optimize """
         G_vars = self.generator.trainable_variables
         generator_gradients = gen_tape.gradient(gen_loss, G_vars)
+        self.generator_optimizer.
         self.generator_optimizer.apply_gradients(zip(generator_gradients, G_vars))
 
         inputs_concat = tf.concat([paired_input, paired_target], axis=2)
