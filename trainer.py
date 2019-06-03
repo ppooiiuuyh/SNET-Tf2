@@ -23,6 +23,7 @@ parser.add_argument("--patch_size", type=int, default=48, help='Minibatch size(g
 parser.add_argument("--jpeg_quality", type=int, default=20, help='Minibatch size(global)')
 parser.add_argument("--num_metrics", type=int, default=8, help='the number of metrics')
 parser.add_argument("--learning_rate", type=float, default=0.0001, help="lr")
+parser.add_argument("--min_learning_rate", type=float, default=0.000001, help="min_lr")
 parser.add_argument("--data_root_train", type=str, default='./dataset/train/BSD400', help='Data root dir')
 parser.add_argument("--data_root_test", type=str, default='./dataset/test/Set5', help='Data root dir')
 parser.add_argument("--channels", type=int, default=3, help='Channel size')
@@ -85,12 +86,12 @@ while True : #manuallry stopping
         train_iterator, test_dataset = make_iterator_offtime(config)
 
     log = model.train_step(train_iterator, log_interval= 100)
-    if model.step.numpy() % 1 == 0:
+    if model.step.numpy() % 1000 == 0:
         print("[train] step:{} elapse:{} {}".format(model.step.numpy(), time.time() - start, log))
 
 
     """ test """
-    if model.step.numpy() % 5000 == 100:
+    if model.step.numpy() % 5000 == 0:
         log = model.test_step(test_dataset, summary_name="test")
         print("[test] step:{} elapse:{} {}".format(model.step.numpy(), time.time() - start, log))
 
