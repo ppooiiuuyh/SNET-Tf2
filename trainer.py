@@ -90,7 +90,7 @@ while True : #manuallry stopping
 
 
     """ test """
-    if model.step.numpy() % 5000 == 0:
+    if model.step.numpy() % 5000 == 100:
         log = model.test_step(test_dataset, summary_name="test")
         print("[test] step:{} elapse:{} {}".format(model.step.numpy(), time.time() - start, log))
 

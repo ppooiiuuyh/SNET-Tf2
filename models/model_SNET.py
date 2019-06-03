@@ -13,6 +13,8 @@ class Model_Train():
         log_dir = os.path.join(config.summary_dir)
         self.train_summary_writer = tf.summary.create_file_writer(log_dir)
 
+    def learning_late_decayer_add_underbound(self):
+
 
     def build_model(self):
         """ model """
@@ -27,8 +29,7 @@ class Model_Train():
 
         #self.learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
         self.learning_rate =  tf.compat.v1.train.exponential_decay(self.config.learning_rate, self.step, 10000, 0.1,  staircase=False,   name=None)
-        self.learning_rate = partial(tf.maximum, 0.000001, self.learning_rate())
-        self.generator_optimizer = tf.keras.optimizers.Adam(self.learning_rate)
+        self.generator_optimizer = tf.keras.optimizers.Adam(lambda x, f : tf.maximum(x, f())(0.000001, self.learning_rate))
 
         """ saver """
         self.ckpt = tf.train.Checkpoint(step=self.step,
