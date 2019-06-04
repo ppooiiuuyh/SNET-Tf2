@@ -56,7 +56,7 @@ class Model_Train():
             gen_loss = tf.reduce_mean(gen_losses)
 
         """ optimize """
-        G_vars = [ v for v in self.generator.trainable_variables if "block{}".format(sb) in v.name]
+        G_vars = self.generator.trainable_variables
         generator_gradients = gen_tape.gradient(gen_loss, G_vars)
         self.generator_optimizer.apply_gradients(zip(generator_gradients, G_vars))
 
