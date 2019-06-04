@@ -17,9 +17,9 @@ class Model_Train():
     def build_model(self):
         """ model """
         if self.config.exp_type == 0:
-            self.generator = S_Net(num_metrics=self.config.num_metrics, structure_type= 'advanced')
+            self.generator = S_Net(num_metrics=self.config.num_metrics, structure_type= 'advanced', nf = self.config.num_filters)
         elif self.config.exp_type == 1:
-            self.generator = S_Net_contskip(num_metrics=self.config.num_metrics, structure_type='advanced')
+            self.generator = S_Net_contskip(num_metrics=self.config.num_metrics, structure_type='advanced', nf = self.config.num_filters)
         elif self.config.exp_type == 2:
             self.generator = S_Net_progressiveskip(num_metrics=self.config.num_metrics, structure_type='advanced')
         elif self.config.exp_type == 3:
@@ -28,7 +28,7 @@ class Model_Train():
         #self.learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
         self.lr_scheduler_fn =  tf.compat.v1.train.exponential_decay(self.config.learning_rate, self.step, 10000, 0.1,  staircase=True,   name=None)
         self.learning_rate = lambda : tf.maximum(self.config.min_learning_rate, self.lr_scheduler_fn())
-        self.learning_rate = tf.maximum(self.config.min_learning_rate, self.config.learning_rate* 0.1**tf.cast(tf.maximum(self.step-25000,0)//10000,dtype=tf.float32))
+        self.learning_rate = tf.maximum(self.config.min_learning_rate, self.config.learning_rate* 0.1**tf.cast(tf.maximum(self.step,0)//10000,dtype=tf.float32))
         self.generator_optimizer = tf.keras.optimizers.Adam( self.learning_rate )
 
         """ saver """
@@ -48,11 +48,12 @@ class Model_Train():
             B_from_As = self.generator(paired_input)
 
             """ loss for generator """
-            if self.config.exp_type == 0:
-                gen_losses = [L1loss(paired_target, B_from_As[i]) for i in range(self.config.num_metrics)]
-            else :
-                upto  = tf.minimum(self.step // 5000 + 3, self.config.num_metrics)
-                gen_losses = [L1loss(paired_target, B_from_As[i])*(0.9**i) for i in range(upto)]
+            #if self.config.exp_type == 0:
+            #
+            #else :
+            #    upto  = tf.minimum(self.step // 5000 + 3, self.config.num_metrics)
+            #    gen_losses = [L1loss(paired_target, B_from_As[i])*(0.9**i) for i in range(upto)]
+            gen_losses = [L1loss(paired_target, B_from_As[i]) for i in range(self.config.num_metrics)]
             gen_loss = tf.reduce_mean(gen_losses)
 
         """ optimize """
