@@ -28,7 +28,7 @@ class Model_Train():
         #self.learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
         self.lr_scheduler_fn =  tf.compat.v1.train.exponential_decay(self.config.learning_rate, self.step, 10000, 0.1,  staircase=True,   name=None)
         self.learning_rate = lambda : tf.maximum(self.config.min_learning_rate, self.lr_scheduler_fn())
-        self.learning_rate = tf.maximum(self.config.min_learning_rate, self.config.learning_rate* 0.1**tf.maximum(self.step-25000,0)//10000)
+        self.learning_rate = tf.maximum(self.config.min_learning_rate, self.config.learning_rate* 0.1**tf.cast(tf.maximum(self.step-25000,0)//10000,dtype=tf.float32))
         self.generator_optimizer = tf.keras.optimizers.Adam( self.learning_rate )
 
         """ saver """
