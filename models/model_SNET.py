@@ -28,6 +28,7 @@ class Model_Train():
         #self.learning_rate = tf.maximum( self.config.learning_rate * (0.1 ** tf.cast(self.step // 10000, dtype=tf.float32)), 0.000001)
         self.lr_scheduler_fn =  tf.compat.v1.train.exponential_decay(self.config.learning_rate, self.step, 10000, 0.1,  staircase=True,   name=None)
         self.learning_rate = lambda : tf.maximum(self.config.min_learning_rate, self.lr_scheduler_fn())
+        self.learning_rate = tf.maximum(self.config.min_learning_rate, self.config.learning_rate* 0.1**tf.maximum(self.step-25000,0)//10000)
         self.generator_optimizer = tf.keras.optimizers.Adam( self.learning_rate )
 
         """ saver """
@@ -47,11 +48,12 @@ class Model_Train():
             B_from_As = self.generator(paired_input)
 
             """ loss for generator """
-            gen_losses = [L1loss(paired_target, B_from_A) for B_from_A in B_from_As]
+            upto  = min(self.step // 5000 + 3, self.config.num_metrics)
+            gen_losses = [L1loss(paired_target, B_from_As[i])*(0.9**i) for i in range(upto)]
             gen_loss = tf.reduce_mean(gen_losses)
 
         """ optimize """
-        G_vars = self.generator.trainable_variables
+        G_vars = [ v for v in self.generator.trainable_variables if "block{}".format(sb) in v.name]
         generator_gradients = gen_tape.gradient(gen_loss, G_vars)
         self.generator_optimizer.apply_gradients(zip(generator_gradients, G_vars))
 
