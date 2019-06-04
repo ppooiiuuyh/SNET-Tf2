@@ -48,8 +48,11 @@ class Model_Train():
             B_from_As = self.generator(paired_input)
 
             """ loss for generator """
-            upto  = min(self.step // 5000 + 3, self.config.num_metrics)
-            gen_losses = [L1loss(paired_target, B_from_As[i])*(0.9**i) for i in range(upto)]
+            if self.config.exp_type == 0:
+                gen_losses = [L1loss(paired_target, B_from_As[i]) for i in range(self.config.num_metrics)]
+            else :
+                upto  = min(self.step // 5000 + 3, self.config.num_metrics)
+                gen_losses = [L1loss(paired_target, B_from_As[i])*(0.9**i) for i in range(upto)]
             gen_loss = tf.reduce_mean(gen_losses)
 
         """ optimize """

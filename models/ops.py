@@ -56,9 +56,8 @@ def S_Net(channels = 3, num_metrics=3 , structure_type='classic'):
     convolution_units = []
     decoders = []
     for i in range(num_metrics):
-        with tf.variable_scope("block{}".format(i)):
-            convolution_units.append(ConvolutionalUnit( convolution_units[-1] if len(convolution_units)>0 else ConvolutionalUnit(encoder), structure_type = structure_type))
-            decoders.apend(DecoderBlock(convolution_units[-1]))
+        convolution_units.append(ConvolutionalUnit( convolution_units[-1] if len(convolution_units)>0 else ConvolutionalUnit(encoder), structure_type = structure_type))
+        decoders.apend(DecoderBlock(convolution_units[-1]))
     #decoders = [DecoderBlock(cu) for cu in convolution_units]
     #return [tf.keras.Model(inputs=[inputs], outputs=[dec]) for dec in decoders]
     return tf.keras.Model(inputs=[inputs], outputs=decoders)
@@ -70,9 +69,8 @@ def S_Net_contskip(channels = 3, num_metrics=3 , structure_type='classic'):
     convolution_units = []
     decoders = []
     for i in range(num_metrics):
-        with tf.variable_scope("block{}".format(i)):
-            convolution_units.append(ConvolutionalUnit( convolution_units[-1] if len(convolution_units)>0 else ConvolutionalUnit(encoder), structure_type = structure_type))
-            decoders.append(tf.keras.layers.Add()([DecoderBlock(convolution_units[-1]), inputs]))
+        convolution_units.append(ConvolutionalUnit( convolution_units[-1] if len(convolution_units)>0 else ConvolutionalUnit(encoder), structure_type = structure_type))
+        decoders.append(tf.keras.layers.Add()([DecoderBlock(convolution_units[-1]), inputs]))
     #decoders = [ tf.keras.layers.Add()([DecoderBlock(cu), inputs]) for cu in convolution_units]
     #return [tf.keras.Model(inputs=[inputs], outputs=[dec]) for dec in decoders]
     return tf.keras.Model(inputs=[inputs], outputs=decoders)
