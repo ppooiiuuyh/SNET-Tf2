@@ -86,7 +86,7 @@ class Model_Train():
 
 
         """ return log str """
-        return "g_loss : {} lr : {}".format(result_logs_dict["gen_loss"], self.learning_rate.numpy())
+        return "g_loss : {} lr : {}".format(result_logs_dict["gen_loss"], self.learning_rate().numpy())
 
 
 
