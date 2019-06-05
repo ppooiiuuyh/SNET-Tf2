@@ -31,8 +31,6 @@ def DecoderBlock(x, activation = tf.keras.layers.LeakyReLU(alpha=0.2), nf = 256)
 
 
 
-
-
 def ConvolutionalUnit(x, structure_type = 'classic', activation = tf.keras.layers.LeakyReLU(alpha=0.2), nf = 256):
     residual = x
 
@@ -63,6 +61,7 @@ def S_Net(channels = 3, num_metrics=3 , structure_type='classic', nf = 256):
     return tf.keras.Model(inputs=[inputs], outputs=decoders)
 
 
+
 def S_Net_contskip(channels = 3, num_metrics=3 , structure_type='classic', nf= 256):
     inputs = tf.keras.layers.Input(shape=[None, None, channels])
     encoder = EncoderBlock(inputs,nf = nf)
@@ -74,6 +73,24 @@ def S_Net_contskip(channels = 3, num_metrics=3 , structure_type='classic', nf= 2
     #decoders = [ tf.keras.layers.Add()([DecoderBlock(cu), inputs]) for cu in convolution_units]
     #return [tf.keras.Model(inputs=[inputs], outputs=[dec]) for dec in decoders]
     return tf.keras.Model(inputs=[inputs], outputs=decoders)
+
+
+
+def S_Net_nonshared(channels = 3, num_metrics=3 , structure_type='classic', nf = 256):
+    inputs = tf.keras.layers.Input(shape=[None, None, channels])
+    encoder = EncoderBlock(inputs, nf = nf)
+    convolution_units = []
+    decoders = []
+    for i in range(num_metrics):
+        convolution_units.append(ConvolutionalUnit( convolution_units[-1] if len(convolution_units)>0 else ConvolutionalUnit(encoder, nf=nf), structure_type = structure_type, nf=nf))
+        decoders.append(DecoderBlock(ConvolutionalUnit(convolution_units[-1],nf=nf),nf=nf))
+    #decoders = [DecoderBlock(cu) for cu in convolution_units]
+    #return [tf.keras.Model(inputs=[inputs], outputs=[dec]) for dec in decoders]
+    return tf.keras.Model(inputs=[inputs], outputs=decoders)
+
+
+
+
 
 def S_Net_progressiveskip(channels = 3, num_metrics=3 , structure_type='classic'):
     inputs = tf.keras.layers.Input(shape=[None, None, channels])

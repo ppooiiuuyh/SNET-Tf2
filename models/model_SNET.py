@@ -21,7 +21,7 @@ class Model_Train():
         elif self.config.exp_type == 1:
             self.generator = S_Net_contskip(num_metrics=self.config.num_metrics, structure_type='advanced', nf = self.config.num_filters)
         elif self.config.exp_type == 2:
-            self.generator = S_Net_progressiveskip(num_metrics=self.config.num_metrics, structure_type='advanced')
+            self.generator = S_Net_nonshared(num_metrics=self.config.num_metrics, structure_type='advanced',nf = self.config.num_filters)
         elif self.config.exp_type == 3:
             self.generator = S_Net_intermediated_awared(num_metrics=self.config.num_metrics, structure_type='advanced')
 
