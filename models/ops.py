@@ -96,7 +96,7 @@ def S_Net_contskip_nonshared(channels = 3, num_metrics=3 , structure_type='class
     decoders = []
     for i in range(num_metrics):
         convolution_units.append(ConvolutionalUnit( convolution_units[-1] if len(convolution_units)>0 else ConvolutionalUnit(encoder, nf=nf), structure_type = structure_type, nf=nf))
-        decoders.append(tf.keras.layers.Add()(DecoderBlock(ConvolutionalUnit(convolution_units[-1],nf=nf),nf=nf), inputs))
+        decoders.append(tf.keras.layers.Add()(DecoderBlock(ConvolutionalUnit(convolution_units[-1],nf=nf),structure_type = structure_type,nf=nf), inputs))
     return tf.keras.Model(inputs=[inputs], outputs=decoders)
 
 
