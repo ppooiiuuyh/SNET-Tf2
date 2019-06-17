@@ -1,12 +1,9 @@
 import datetime
 import time
-
-from backups.ops import *
-from data_utils import *
+from data_utils2 import *
 from models.model_SNET import Model_Train
-
 #tf.config.gpu.set_per_process_memory_fraction(0.6)
-tf.config.gpu.set_per_process_memory_growth(True)
+#tf.config.gpu.set_per_process_memory_growth(True)
 
 """ --------------------------------------------------------------------
 configuaration
@@ -15,18 +12,19 @@ start = time.time()
 time_now = datetime.datetime.now()
 parser = argparse.ArgumentParser()
 parser.add_argument("--exp_type", type=int, default=1, help='experiment type')
-parser.add_argument("--gpu", type=str, default=4)  # -1 for CPU
+parser.add_argument("--gpu", type=str, default=0)  # -1 for CPU
 parser.add_argument("--crop_size", type=list, default=[512, 512], nargs="+", help='Image size after crop.')
 parser.add_argument("--buffer_size", type=int, default=20000, help='Data buffer size.')
 parser.add_argument("--batch_size", type=int, default=16, help='Minibatch size(global)')
-parser.add_argument("--patch_size", type=int, default=48, help='Minibatch size(global)')
-parser.add_argument("--jpeg_quality", type=int, default=20, help='Minibatch size(global)')
+parser.add_argument("--patch_size", type=int, default=48, help='Minipatch size(global)')
+parser.add_argument("--jpeg_quality", type=int, default=20, help='jpeg quallity')
 parser.add_argument("--num_metrics", type=int, default=8, help='the number of metrics')
 parser.add_argument("--num_filters", type=int, default=256, help='the number of filters')
 parser.add_argument("--learning_rate", type=float, default=0.0001, help="lr")
 parser.add_argument("--min_learning_rate", type=float, default=0.000001, help="min_lr")
-parser.add_argument("--data_root_train", type=str, default='./dataset/train/BSD400', help='Data root dir')
-parser.add_argument("--data_root_test", type=str, default='./dataset/test/Set5', help='Data root dir')
+parser.add_argument("--data_root_train", type=str, default="/projects/datasets/restoration/DIV2K/", help='Data root dir')
+parser.add_argument("--data_root_test", type=str, default="/projects/datasets/restoration/LIVE1/", help='Data root dir')
+#parser.add_argument("--data_root_test", type=str, default="./dataset/test/Set5", help='Data root dir')
 parser.add_argument("--channels", type=int, default=3, help='Channel size')
 parser.add_argument("--model_tag", type=str, default="default", help='Exp name to save logs/checkpoints.')
 parser.add_argument("--checkpoint_dir", type=str, default='./__outputs/checkpoints/', help='Dir for checkpoints.')
@@ -44,7 +42,6 @@ def generate_expname_automatically():
 expname  = generate_expname_automatically()
 config.checkpoint_dir += expname ; check_folder(config.checkpoint_dir)
 config.summary_dir += expname ; check_folder(config.summary_dir)
-
 os.environ["CUDA_VISIBLE_DEVICES"] = str(config.gpu)
 
 
@@ -67,12 +64,11 @@ if config.restore_file is not None :
 prepare dataset
 ---------------------------------------------------------------------"""
 """ prepare paired iterator """
+trainset_dispenser = Trainset_Dispenser(data_path=config.data_root_train, config=config)
+testset_dispenser = Testset_Dispenser(data_path=config.data_root_test, config=config)
 # train_iterator.__next__() = (paired_input, paired_target), unpaired_input, unpaired_target #repeat
 # test_iterator.__iter__().__next__() = test_input #not repeat
 # reference_iterator.__next__() = reference # repeat
-#train_iterator, test_dataset, reference_iterator = make_iterator(config, line_normalizer= line_normalizer) #preaload all images on memory
-#train_iterator, test_dataset = make_iterator_ontime(config) #load each batches ontime
-#train_iterator, test_dataset = make_iterator_offtime(config) #load each batches ontime
 
 
 
@@ -83,21 +79,25 @@ train
 ---------------------------------------------------------------------"""
 while True : #manuallry stopping
     """ train """
-    if model.step * config.batch_size % config.buffer_size < config.batch_size :
-        train_iterator, test_dataset = make_iterator_offtime(config)
-
-    log = model.train_step(train_iterator, log_interval= 100)
-    if model.step.numpy() % 1000 == 0:
+    log, output = model.train_step(trainset_dispenser, log_interval= 100)
+    if model.step.numpy() % 1 == 0:
         print("[train] step:{} elapse:{} {}".format(model.step.numpy(), time.time() - start, log))
 
+        #visualization
+        output_concat = np.concatenate([output[i] for i in range(len(output))], axis=1)[0]
+        output_concat = cv2.resize(output_concat,(output_concat.shape[1]*3,output_concat.shape[0]*3))
+        cv2.imshow('image', output_concat[...,::-1])
+        cv2.waitKey(10)
 
     """ test """
     if model.step.numpy() % 5000 == 0:
-        log = model.test_step(test_dataset, summary_name="test")
+        log = model.test_step(testset_dispenser, summary_name="test")
         print("[test] step:{} elapse:{} {}".format(model.step.numpy(), time.time() - start, log))
 
 
     """ save model """
+    '''
     if model.step.numpy() % 50000 == 0:  save_path = model.save()
+    '''
 
     model.step.assign_add(1)

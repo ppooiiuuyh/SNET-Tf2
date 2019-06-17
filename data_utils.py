@@ -161,6 +161,11 @@ def make_iterator_ontime(config):
 
 
 
+
+
+
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpu", type=str, default=4)  # -1 for CPU
@@ -169,8 +174,8 @@ if __name__ == "__main__":
     parser.add_argument("--batch_size", type=int, default=2, help='Minibatch size(global)')
     parser.add_argument("--patch_size", type=int, default=48, help='Minibatch size(global)')
     parser.add_argument("--jpeg_quality", type=int, default=20, help='Minibatch size(global)')
-    parser.add_argument("--data_root_train", type=str, default='./dataset/test/Set5', help='Data root dir')
-    parser.add_argument("--data_root_test", type=str, default='./dataset/test/Set5', help='Data root dir')
+    parser.add_argument("--data_root_train", type=str, default="/projects/datasets/restoration/BSD500/all", help='Data root dir')
+    parser.add_argument("--data_root_test", type=str, default="/projects/datasets/restoration/LIVE1/all", help='Data root dir')
     parser.add_argument("--channels", type=int, default=3, help='Channel size')
     parser.add_argument("--model_tag", type=str, default="default", help='Exp name to save logs/checkpoints.')
     parser.add_argument("--checkpoint_dir", type=str, default='../__outputs/checkpoints/', help='Dir for checkpoints.')
