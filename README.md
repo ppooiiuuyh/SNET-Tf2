@@ -21,7 +21,7 @@ Tensorflow implemetation of depth conrllable ARNet (based on SNET)
 ## Dataset
  * Trainset : DIV2K
  * Testset : LIVE1, BSD500 
- * [dataset download link (무단입니다 privateㅇ으로만 공유)](https://drive.google.com/drive/folders/1PVofBbki8YSR8HEY1nkfpCalLeb9GSqg?usp=sharing)
+ * [dataset download link (무단입니다 private용으로만 공유)](https://drive.google.com/drive/folders/1PVofBbki8YSR8HEY1nkfpCalLeb9GSqg?usp=sharing)
 
 ## Usage
 #### For training
